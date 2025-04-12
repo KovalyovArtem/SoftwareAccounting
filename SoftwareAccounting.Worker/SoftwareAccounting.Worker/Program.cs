@@ -49,14 +49,13 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(c =>
 {
-    c.SwaggerDoc("v1", new OpenApiInfo { Title = "Laboratory API", Version = "v1" });
+    c.SwaggerDoc("v1", new OpenApiInfo { Title = "SoftwareAccountingService API", Version = "v1" });
     c.ResolveConflictingActions(apiDescriptions => apiDescriptions.First());
 
     foreach (var file in Directory.EnumerateFiles(builder.Environment.ContentRootPath, "*.xml", SearchOption.TopDirectoryOnly))
     {
         c.IncludeXmlComments(file, includeControllerXmlComments: true);
     }
-
 });
 
 builder.Services.AddWindowsService();

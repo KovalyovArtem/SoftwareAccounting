@@ -9,5 +9,7 @@ namespace SoftwareAccounting.Common.Models
     public class AppSettings
     {
         public required string ApiServiceUrl { get; set; }
+
+        public required string SoftwareUrl { get; set; }
     }
 }

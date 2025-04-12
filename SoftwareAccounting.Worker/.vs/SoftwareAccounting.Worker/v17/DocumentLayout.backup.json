@@ -3,12 +3,20 @@
   "WorkspaceRootPath": "P:\\SoftwareAccounting\\SoftwareAccounting.Worker\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{A73D3C94-318A-432E-8E67-E3FAF942AA20}|SoftwareAccounting.Worker\\SoftwareAccounting.Worker.csproj|p:\\softwareaccounting\\softwareaccounting.worker\\softwareaccounting.worker\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{A73D3C94-318A-432E-8E67-E3FAF942AA20}|SoftwareAccounting.Worker\\SoftwareAccounting.Worker.csproj|solutionrelative:softwareaccounting.worker\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{A73D3C94-318A-432E-8E67-E3FAF942AA20}|SoftwareAccounting.Worker\\SoftwareAccounting.Worker.csproj|p:\\softwareaccounting\\softwareaccounting.worker\\softwareaccounting.worker\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A73D3C94-318A-432E-8E67-E3FAF942AA20}|SoftwareAccounting.Worker\\SoftwareAccounting.Worker.csproj|solutionrelative:softwareaccounting.worker\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{CDC5AF7D-49A8-40A2-B316-E42A1685256F}|SoftwareAccounting.Library\\SoftwareAccounting.Library.csproj|p:\\softwareaccounting\\softwareaccounting.worker\\softwareaccounting.library\\services\\activeutilityservices\\implementations\\activeservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{CDC5AF7D-49A8-40A2-B316-E42A1685256F}|SoftwareAccounting.Library\\SoftwareAccounting.Library.csproj|solutionrelative:softwareaccounting.library\\services\\activeutilityservices\\implementations\\activeservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A73D3C94-318A-432E-8E67-E3FAF942AA20}|SoftwareAccounting.Worker\\SoftwareAccounting.Worker.csproj|p:\\softwareaccounting\\softwareaccounting.worker\\softwareaccounting.worker\\controllers\\softwareaccountingcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A73D3C94-318A-432E-8E67-E3FAF942AA20}|SoftwareAccounting.Worker\\SoftwareAccounting.Worker.csproj|solutionrelative:softwareaccounting.worker\\controllers\\softwareaccountingcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,30 +26,56 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "P:\\SoftwareAccounting\\SoftwareAccounting.Worker\\SoftwareAccounting.Worker\\appsettings.json",
+              "RelativeDocumentMoniker": "SoftwareAccounting.Worker\\appsettings.json",
+              "ToolTip": "P:\\SoftwareAccounting\\SoftwareAccounting.Worker\\SoftwareAccounting.Worker\\appsettings.json",
+              "RelativeToolTip": "SoftwareAccounting.Worker\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-04-12T14:23:15.077Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "SoftwareAccountingController.cs",
+              "DocumentMoniker": "P:\\SoftwareAccounting\\SoftwareAccounting.Worker\\SoftwareAccounting.Worker\\Controllers\\SoftwareAccountingController.cs",
+              "RelativeDocumentMoniker": "SoftwareAccounting.Worker\\Controllers\\SoftwareAccountingController.cs",
+              "ToolTip": "P:\\SoftwareAccounting\\SoftwareAccounting.Worker\\SoftwareAccounting.Worker\\Controllers\\SoftwareAccountingController.cs",
+              "RelativeToolTip": "SoftwareAccounting.Worker\\Controllers\\SoftwareAccountingController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-12T13:55:52.192Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "ActiveService.cs",
               "DocumentMoniker": "P:\\SoftwareAccounting\\SoftwareAccounting.Worker\\SoftwareAccounting.Library\\Services\\ActiveUtilityServices\\Implementations\\ActiveService.cs",
               "RelativeDocumentMoniker": "SoftwareAccounting.Library\\Services\\ActiveUtilityServices\\Implementations\\ActiveService.cs",
               "ToolTip": "P:\\SoftwareAccounting\\SoftwareAccounting.Worker\\SoftwareAccounting.Library\\Services\\ActiveUtilityServices\\Implementations\\ActiveService.cs",
               "RelativeToolTip": "SoftwareAccounting.Library\\Services\\ActiveUtilityServices\\Implementations\\ActiveService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAAwAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwBsAAAAZAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-12T12:20:47.976Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "Program.cs",
               "DocumentMoniker": "P:\\SoftwareAccounting\\SoftwareAccounting.Worker\\SoftwareAccounting.Worker\\Program.cs",
               "RelativeDocumentMoniker": "SoftwareAccounting.Worker\\Program.cs",
               "ToolTip": "P:\\SoftwareAccounting\\SoftwareAccounting.Worker\\SoftwareAccounting.Worker\\Program.cs",
               "RelativeToolTip": "SoftwareAccounting.Worker\\Program.cs",
-              "ViewState": "AgIAABAAAAAAAAAAAAAuwBkAAAA8AAAAAAAAAA==",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAuwDwAAAAlAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-12T11:16:58.455Z",
               "EditorCaption": ""

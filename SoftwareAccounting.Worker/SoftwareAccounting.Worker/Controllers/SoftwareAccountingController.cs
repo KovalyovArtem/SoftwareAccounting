@@ -42,7 +42,7 @@ namespace SoftwareAccounting.Worker.Controllers
                 return BadRequest(ex.Message);
             }
 
-            return Ok();
+            return Ok("Запись была успешной");
         }
     }
 }

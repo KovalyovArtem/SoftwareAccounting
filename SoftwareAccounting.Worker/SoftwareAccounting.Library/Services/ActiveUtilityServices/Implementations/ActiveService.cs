@@ -25,7 +25,7 @@ namespace SoftwareAccounting.Library.Services.ActiveUtilityServices.Implementati
 
         public async Task<bool> SendInfoAboutDeviceIsActive()
         {
-            throw new NotImplementedException();
+            return false;
         }
     }
 }
