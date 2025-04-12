@@ -2,6 +2,7 @@
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using SoftwareAccounting.Library.Services.ActiveUtilityServices.Interfaces;
+using SoftwareAccounting.Library.Services.DeviceScan.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -23,10 +24,12 @@ namespace SoftwareAccounting.Worker
                 using var scope = serviceProvider.CreateScope();
                 var _logger = scope.ServiceProvider.GetService<ILogger<Worker>>();
                 var _activeService = scope.ServiceProvider.GetService<IActiveService>();
+                var _deviceScan = scope.ServiceProvider.GetService<IDeviceScan>();
 
                 try
                 {
-                    _requestIsSuccessful = await _activeService.SendInfoAboutDeviceIsActive();
+                    var deviceSettings = _deviceScan.DoScanSettingsDevice();
+                    _requestIsSuccessful = await _activeService.SendInfoAboutDeviceIsActive(deviceSettings);
                 }
                 catch (Exception ex)
                 {

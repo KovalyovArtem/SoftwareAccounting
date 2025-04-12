@@ -6,9 +6,11 @@ using Microsoft.OpenApi.Models;
 using SoftwareAccounting.Common.Models;
 using SoftwareAccounting.Library.Services.ActiveUtilityServices.Implementations;
 using SoftwareAccounting.Library.Services.ActiveUtilityServices.Interfaces;
-using SoftwareAccounting.Library.Services.SoftwareScan.Implementations;
-using SoftwareAccounting.Library.Services.SoftwareScan.Interfaces;
+using SoftwareAccounting.Library.Services.ApiClients;
+using SoftwareAccounting.Library.Services.DeviceScan.Implementations;
+using SoftwareAccounting.Library.Services.DeviceScan.Interfaces;
 using SoftwareAccounting.Worker;
+using Refit;
 
 var pathToExe = Environment.ProcessPath;
 string pathToContentRoot = Path.GetDirectoryName(pathToExe);
@@ -23,6 +25,14 @@ var options = builder.Configuration.GetSection("Settings");
 builder.Services.Configure<AppSettings>(options);
 var appSettings = options.Get<AppSettings>();
 
+if (!string.IsNullOrEmpty(appSettings?.ApiServiceUrl))
+{
+    builder.Services.AddRefitClient<ISoftwareAccountingApiClient>().ConfigureHttpClient(c =>
+    {
+        c.BaseAddress = new Uri(appSettings?.ApiServiceUrl);
+    });
+}
+
 builder.Services.AddScoped<IActiveService, ActiveService>();
 
 if (OperatingSystem.IsWindows())
@@ -33,7 +43,7 @@ else if (OperatingSystem.IsLinux())
 {
 
 }
-else if (OperatingSystem.IsIOS())
+else if (OperatingSystem.IsIOS() || OperatingSystem.IsMacOS())
 {
 
 }

@@ -129,6 +129,10 @@
               "target": "Package",
               "version": "[9.0.4, )"
             },
+            "Refit": {
+              "target": "Package",
+              "version": "[8.0.0, )"
+            },
             "System.Management": {
               "target": "Package",
               "version": "[9.0.4, )"
@@ -219,6 +223,14 @@
             "Microsoft.Extensions.Hosting.WindowsServices": {
               "target": "Package",
               "version": "[9.0.4, )"
+            },
+            "Refit": {
+              "target": "Package",
+              "version": "[8.0.0, )"
+            },
+            "Refit.HttpClientFactory": {
+              "target": "Package",
+              "version": "[8.0.0, )"
             },
             "Serilog.AspNetCore": {
               "target": "Package",

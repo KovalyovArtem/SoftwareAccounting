@@ -15,5 +15,11 @@ namespace SoftwareAccounting.Library.Services.DeviceScan.Interfaces
         /// </summary>
         /// <returns>Возвращает модель железа на устройстве и подключённую переферию</returns>
         List<HarwareInfoModel> DoScanHarwareDevice();
+
+        /// <summary>
+        /// Получение настроек текущего устройства
+        /// </summary>
+        /// <returns>Возвращает модель настроек текущего устройства</returns>
+        DeviceSettingsModel DoScanSettingsDevice();
     }
 }

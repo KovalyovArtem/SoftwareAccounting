@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "QTsD0EMbpUo=",
+  "dgSpecHash": "1x/tvZWCpGA=",
   "success": true,
   "projectFilePath": "P:\\SoftwareAccounting\\SoftwareAccounting.Worker\\SoftwareAccounting.Worker\\SoftwareAccounting.Worker.csproj",
   "expectedPackageFiles": [
@@ -24,6 +24,7 @@
     "C:\\Users\\Артём\\.nuget\\packages\\microsoft.extensions.hosting\\9.0.4\\microsoft.extensions.hosting.9.0.4.nupkg.sha512",
     "C:\\Users\\Артём\\.nuget\\packages\\microsoft.extensions.hosting.abstractions\\9.0.4\\microsoft.extensions.hosting.abstractions.9.0.4.nupkg.sha512",
     "C:\\Users\\Артём\\.nuget\\packages\\microsoft.extensions.hosting.windowsservices\\9.0.4\\microsoft.extensions.hosting.windowsservices.9.0.4.nupkg.sha512",
+    "C:\\Users\\Артём\\.nuget\\packages\\microsoft.extensions.http\\8.0.1\\microsoft.extensions.http.8.0.1.nupkg.sha512",
     "C:\\Users\\Артём\\.nuget\\packages\\microsoft.extensions.logging\\9.0.4\\microsoft.extensions.logging.9.0.4.nupkg.sha512",
     "C:\\Users\\Артём\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\9.0.4\\microsoft.extensions.logging.abstractions.9.0.4.nupkg.sha512",
     "C:\\Users\\Артём\\.nuget\\packages\\microsoft.extensions.logging.configuration\\9.0.4\\microsoft.extensions.logging.configuration.9.0.4.nupkg.sha512",
@@ -35,6 +36,8 @@
     "C:\\Users\\Артём\\.nuget\\packages\\microsoft.extensions.options.configurationextensions\\9.0.4\\microsoft.extensions.options.configurationextensions.9.0.4.nupkg.sha512",
     "C:\\Users\\Артём\\.nuget\\packages\\microsoft.extensions.primitives\\9.0.4\\microsoft.extensions.primitives.9.0.4.nupkg.sha512",
     "C:\\Users\\Артём\\.nuget\\packages\\microsoft.openapi\\1.6.23\\microsoft.openapi.1.6.23.nupkg.sha512",
+    "C:\\Users\\Артём\\.nuget\\packages\\refit\\8.0.0\\refit.8.0.0.nupkg.sha512",
+    "C:\\Users\\Артём\\.nuget\\packages\\refit.httpclientfactory\\8.0.0\\refit.httpclientfactory.8.0.0.nupkg.sha512",
     "C:\\Users\\Артём\\.nuget\\packages\\serilog\\4.2.0\\serilog.4.2.0.nupkg.sha512",
     "C:\\Users\\Артём\\.nuget\\packages\\serilog.aspnetcore\\9.0.0\\serilog.aspnetcore.9.0.0.nupkg.sha512",
     "C:\\Users\\Артём\\.nuget\\packages\\serilog.extensions.hosting\\9.0.0\\serilog.extensions.hosting.9.0.0.nupkg.sha512",
