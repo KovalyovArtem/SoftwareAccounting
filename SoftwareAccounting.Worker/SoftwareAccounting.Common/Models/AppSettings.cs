@@ -8,6 +8,6 @@ namespace SoftwareAccounting.Common.Models
 {
     public class AppSettings
     {
-        public required string urlToDomainAPI { get; set; }
+        public required string ApiServiceUrl { get; set; }
     }
 }

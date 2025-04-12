@@ -1,6 +1,6 @@
-﻿using SoftwareAccounting.Library.SoftwareScan.Interfaces;
+﻿using SoftwareAccounting.Library.Services.SoftwareScan.Interfaces;
 
-namespace SoftwareAccounting.Library.SoftwareScan.Implementations
+namespace SoftwareAccounting.Library.Services.SoftwareScan.Implementations
 {
     public class WindowsSoftwareScan : ISoftwareScan
     {

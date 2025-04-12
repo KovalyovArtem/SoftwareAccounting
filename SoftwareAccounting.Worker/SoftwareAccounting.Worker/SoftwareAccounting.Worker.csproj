@@ -19,6 +19,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\SoftwareAccounting.Common\SoftwareAccounting.Common.csproj" />
+    <ProjectReference Include="..\SoftwareAccounting.Library\SoftwareAccounting.Library.csproj" />
   </ItemGroup>
 
 </Project>

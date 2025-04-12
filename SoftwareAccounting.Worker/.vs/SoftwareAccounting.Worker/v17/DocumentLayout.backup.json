@@ -3,12 +3,12 @@
   "WorkspaceRootPath": "P:\\SoftwareAccounting\\SoftwareAccounting.Worker\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{B286820F-FD53-41B9-9FA0-BF2984499964}|SoftwareAccounting.Common\\SoftwareAccounting.Common.csproj|p:\\softwareaccounting\\softwareaccounting.worker\\softwareaccounting.common\\softwareaccounting.common.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
-      "RelativeMoniker": "D:0:0:{B286820F-FD53-41B9-9FA0-BF2984499964}|SoftwareAccounting.Common\\SoftwareAccounting.Common.csproj|solutionrelative:softwareaccounting.common\\softwareaccounting.common.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{A73D3C94-318A-432E-8E67-E3FAF942AA20}|SoftwareAccounting.Worker\\SoftwareAccounting.Worker.csproj|p:\\softwareaccounting\\softwareaccounting.worker\\softwareaccounting.worker\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A73D3C94-318A-432E-8E67-E3FAF942AA20}|SoftwareAccounting.Worker\\SoftwareAccounting.Worker.csproj|solutionrelative:softwareaccounting.worker\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CDC5AF7D-49A8-40A2-B316-E42A1685256F}|SoftwareAccounting.Library\\SoftwareAccounting.Library.csproj|p:\\softwareaccounting\\softwareaccounting.worker\\softwareaccounting.library\\services\\activeutilityservices\\implementations\\activeservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CDC5AF7D-49A8-40A2-B316-E42A1685256F}|SoftwareAccounting.Library\\SoftwareAccounting.Library.csproj|solutionrelative:softwareaccounting.library\\services\\activeutilityservices\\implementations\\activeservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,37 +18,33 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "SoftwareAccounting.Common",
-              "DocumentMoniker": "P:\\SoftwareAccounting\\SoftwareAccounting.Worker\\SoftwareAccounting.Common\\SoftwareAccounting.Common.csproj",
-              "RelativeDocumentMoniker": "SoftwareAccounting.Common\\SoftwareAccounting.Common.csproj",
-              "ToolTip": "P:\\SoftwareAccounting\\SoftwareAccounting.Worker\\SoftwareAccounting.Common\\SoftwareAccounting.Common.csproj",
-              "RelativeToolTip": "SoftwareAccounting.Common\\SoftwareAccounting.Common.csproj",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-04-12T11:21:00.016Z",
+              "DocumentIndex": 1,
+              "Title": "ActiveService.cs",
+              "DocumentMoniker": "P:\\SoftwareAccounting\\SoftwareAccounting.Worker\\SoftwareAccounting.Library\\Services\\ActiveUtilityServices\\Implementations\\ActiveService.cs",
+              "RelativeDocumentMoniker": "SoftwareAccounting.Library\\Services\\ActiveUtilityServices\\Implementations\\ActiveService.cs",
+              "ToolTip": "P:\\SoftwareAccounting\\SoftwareAccounting.Worker\\SoftwareAccounting.Library\\Services\\ActiveUtilityServices\\Implementations\\ActiveService.cs",
+              "RelativeToolTip": "SoftwareAccounting.Library\\Services\\ActiveUtilityServices\\Implementations\\ActiveService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAAwAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-12T12:20:47.976Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "Program.cs",
               "DocumentMoniker": "P:\\SoftwareAccounting\\SoftwareAccounting.Worker\\SoftwareAccounting.Worker\\Program.cs",
               "RelativeDocumentMoniker": "SoftwareAccounting.Worker\\Program.cs",
               "ToolTip": "P:\\SoftwareAccounting\\SoftwareAccounting.Worker\\SoftwareAccounting.Worker\\Program.cs",
               "RelativeToolTip": "SoftwareAccounting.Worker\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAABAAAAAAAAAAAAAuwBkAAAA8AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-12T11:16:58.455Z",
               "EditorCaption": ""
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
             }
           ]
         }

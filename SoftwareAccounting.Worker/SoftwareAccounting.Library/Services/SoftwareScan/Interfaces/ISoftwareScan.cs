@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SoftwareAccounting.Library.SoftwareScan.Interfaces
+namespace SoftwareAccounting.Library.Services.SoftwareScan.Interfaces
 {
     public interface ISoftwareScan
     {

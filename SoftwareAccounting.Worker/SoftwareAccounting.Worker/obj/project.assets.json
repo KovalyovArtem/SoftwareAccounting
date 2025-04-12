@@ -998,6 +998,21 @@
         "runtime": {
           "bin/placeholder/SoftwareAccounting.Common.dll": {}
         }
+      },
+      "SoftwareAccounting.Library/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "dependencies": {
+          "Microsoft.Extensions.Logging.Abstractions": "9.0.4",
+          "Microsoft.Extensions.Options": "9.0.4",
+          "SoftwareAccounting.Common": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/SoftwareAccounting.Library.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/SoftwareAccounting.Library.dll": {}
+        }
       }
     }
   },
@@ -2426,6 +2441,11 @@
       "type": "project",
       "path": "../SoftwareAccounting.Common/SoftwareAccounting.Common.csproj",
       "msbuildProject": "../SoftwareAccounting.Common/SoftwareAccounting.Common.csproj"
+    },
+    "SoftwareAccounting.Library/1.0.0": {
+      "type": "project",
+      "path": "../SoftwareAccounting.Library/SoftwareAccounting.Library.csproj",
+      "msbuildProject": "../SoftwareAccounting.Library/SoftwareAccounting.Library.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -2435,6 +2455,7 @@
       "Microsoft.Extensions.Hosting.WindowsServices >= 9.0.4",
       "Serilog.AspNetCore >= 9.0.0",
       "SoftwareAccounting.Common >= 1.0.0",
+      "SoftwareAccounting.Library >= 1.0.0",
       "Swashbuckle.AspNetCore.Swagger >= 8.1.1",
       "Swashbuckle.AspNetCore.SwaggerGen >= 8.1.1",
       "Swashbuckle.AspNetCore.SwaggerUI >= 8.1.1"
@@ -2475,6 +2496,9 @@
           "projectReferences": {
             "P:\\SoftwareAccounting\\SoftwareAccounting.Worker\\SoftwareAccounting.Common\\SoftwareAccounting.Common.csproj": {
               "projectPath": "P:\\SoftwareAccounting\\SoftwareAccounting.Worker\\SoftwareAccounting.Common\\SoftwareAccounting.Common.csproj"
+            },
+            "P:\\SoftwareAccounting\\SoftwareAccounting.Worker\\SoftwareAccounting.Library\\SoftwareAccounting.Library.csproj": {
+              "projectPath": "P:\\SoftwareAccounting\\SoftwareAccounting.Worker\\SoftwareAccounting.Library\\SoftwareAccounting.Library.csproj"
             }
           }
         }
