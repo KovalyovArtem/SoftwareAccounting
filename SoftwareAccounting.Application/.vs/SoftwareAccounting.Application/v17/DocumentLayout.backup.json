@@ -1,0 +1,37 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "P:\\SoftwareAccounting\\SoftwareAccounting.Application\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{11F6A7FF-A897-4728-B632-60D1F05059FD}|SoftwareAccounting.Application\\SoftwareAccounting.Application.csproj|p:\\softwareaccounting\\softwareaccounting.application\\softwareaccounting.application\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{11F6A7FF-A897-4728-B632-60D1F05059FD}|SoftwareAccounting.Application\\SoftwareAccounting.Application.csproj|solutionrelative:softwareaccounting.application\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "P:\\SoftwareAccounting\\SoftwareAccounting.Application\\SoftwareAccounting.Application\\Program.cs",
+              "RelativeDocumentMoniker": "SoftwareAccounting.Application\\Program.cs",
+              "ToolTip": "P:\\SoftwareAccounting\\SoftwareAccounting.Application\\SoftwareAccounting.Application\\Program.cs",
+              "RelativeToolTip": "SoftwareAccounting.Application\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-12T11:19:09.412Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
