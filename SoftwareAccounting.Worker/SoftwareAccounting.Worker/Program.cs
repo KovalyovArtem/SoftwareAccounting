@@ -27,7 +27,7 @@ builder.Services.AddScoped<IActiveService, ActiveService>();
 
 if (OperatingSystem.IsWindows())
 {
-    builder.Services.AddSingleton<ISoftwareScan, WindowsSoftwareScan>();
+    builder.Services.AddSingleton<IDeviceScan, WindowsDeviceScan>();
 }
 else if (OperatingSystem.IsLinux())
 {

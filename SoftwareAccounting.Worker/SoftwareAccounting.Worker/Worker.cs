@@ -16,7 +16,9 @@ namespace SoftwareAccounting.Worker
 
         protected override async Task ExecuteAsync(CancellationToken stoppingToken)
         {
-            while (true)
+            stoppingToken.Register(() => OnShutdown());
+
+            while (!stoppingToken.IsCancellationRequested)
             {
                 using var scope = serviceProvider.CreateScope();
                 var _logger = scope.ServiceProvider.GetService<ILogger<Worker>>();
@@ -32,6 +34,12 @@ namespace SoftwareAccounting.Worker
                 }
                 await Task.Delay(new TimeSpan(0, 4, 0));
             }
+        }
+
+        private void OnShutdown()
+        {
+            // Надо отправить запрос в API, что комп не активен
+            int p = 0;
         }
     }
 }

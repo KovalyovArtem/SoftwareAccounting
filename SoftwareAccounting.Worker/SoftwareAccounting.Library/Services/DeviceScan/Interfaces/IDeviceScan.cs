@@ -1,23 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using SoftwareAccounting.Common.Models.DeviceInfo;
 
-namespace SoftwareAccounting.Library.Services.SoftwareScan.Interfaces
+namespace SoftwareAccounting.Library.Services.DeviceScan.Interfaces
 {
-    public interface ISoftwareScan
+    public interface IDeviceScan
     {
         /// <summary>
         /// Сканирование устройства на установленное ПО
         /// </summary>
         /// <returns>Модель данных установленного ПО</returns>
-        Task<string> DoScanSoftwareDevice();
+        List<SoftwareInfoModel> DoScanSoftwareDevice();
 
         /// <summary>
         /// Сканирование устройства на железо и подключённую переферию
         /// </summary>
         /// <returns>Возвращает модель железа на устройстве и подключённую переферию</returns>
-        Task<string> DoScanHarwareDevice();
+        List<HarwareInfoModel> DoScanHarwareDevice();
     }
 }
