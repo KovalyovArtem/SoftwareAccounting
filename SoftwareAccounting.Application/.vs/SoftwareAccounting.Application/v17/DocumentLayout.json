@@ -3,6 +3,14 @@
   "WorkspaceRootPath": "P:\\SoftwareAccounting\\SoftwareAccounting.Application\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{11F6A7FF-A897-4728-B632-60D1F05059FD}|SoftwareAccounting.Application\\SoftwareAccounting.Application.csproj|p:\\softwareaccounting\\softwareaccounting.application\\softwareaccounting.application\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{11F6A7FF-A897-4728-B632-60D1F05059FD}|SoftwareAccounting.Application\\SoftwareAccounting.Application.csproj|solutionrelative:softwareaccounting.application\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F9F667D2-08EB-4840-9F72-B664AE6FA4AF}|SoftwareAccounting.Service\\SoftwareAccounting.Service.csproj|p:\\softwareaccounting\\softwareaccounting.application\\softwareaccounting.service\\services\\implementations\\accountservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F9F667D2-08EB-4840-9F72-B664AE6FA4AF}|SoftwareAccounting.Service\\SoftwareAccounting.Service.csproj|solutionrelative:softwareaccounting.service\\services\\implementations\\accountservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{11F6A7FF-A897-4728-B632-60D1F05059FD}|SoftwareAccounting.Application\\SoftwareAccounting.Application.csproj|p:\\softwareaccounting\\softwareaccounting.application\\softwareaccounting.application\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{11F6A7FF-A897-4728-B632-60D1F05059FD}|SoftwareAccounting.Application\\SoftwareAccounting.Application.csproj|solutionrelative:softwareaccounting.application\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
@@ -14,17 +22,43 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "AccountService.cs",
+              "DocumentMoniker": "P:\\SoftwareAccounting\\SoftwareAccounting.Application\\SoftwareAccounting.Service\\Services\\Implementations\\AccountService.cs",
+              "RelativeDocumentMoniker": "SoftwareAccounting.Service\\Services\\Implementations\\AccountService.cs",
+              "ToolTip": "P:\\SoftwareAccounting\\SoftwareAccounting.Application\\SoftwareAccounting.Service\\Services\\Implementations\\AccountService.cs",
+              "RelativeToolTip": "SoftwareAccounting.Service\\Services\\Implementations\\AccountService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-13T19:17:38.456Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "AuthController.cs",
+              "DocumentMoniker": "P:\\SoftwareAccounting\\SoftwareAccounting.Application\\SoftwareAccounting.Application\\Controllers\\AuthController.cs",
+              "RelativeDocumentMoniker": "SoftwareAccounting.Application\\Controllers\\AuthController.cs",
+              "ToolTip": "P:\\SoftwareAccounting\\SoftwareAccounting.Application\\SoftwareAccounting.Application\\Controllers\\AuthController.cs",
+              "RelativeToolTip": "SoftwareAccounting.Application\\Controllers\\AuthController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-13T18:54:42.662Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "Program.cs",
               "DocumentMoniker": "P:\\SoftwareAccounting\\SoftwareAccounting.Application\\SoftwareAccounting.Application\\Program.cs",
               "RelativeDocumentMoniker": "SoftwareAccounting.Application\\Program.cs",
               "ToolTip": "P:\\SoftwareAccounting\\SoftwareAccounting.Application\\SoftwareAccounting.Application\\Program.cs",
               "RelativeToolTip": "SoftwareAccounting.Application\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAaAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-12T11:19:09.412Z",
               "EditorCaption": ""
