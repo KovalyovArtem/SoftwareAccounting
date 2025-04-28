@@ -12,6 +12,6 @@ namespace SoftwareAccounting.Common.Models.DeviceInfo
 
         public List<HarwareInfoModel> HarwareInfoList { get; set; } = new List<HarwareInfoModel>();
 
-        public string ErrorMessage { get; set; }
+        public string? ErrorMessage { get; set; }
     }
 }

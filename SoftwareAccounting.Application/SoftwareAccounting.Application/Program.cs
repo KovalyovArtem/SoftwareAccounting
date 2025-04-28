@@ -19,7 +19,11 @@ builder.Services.AddSingleton(NpgsqlDataSource.Create(appSettings?.DbConnection 
 builder.Services.AddScoped<IAccountService, AccountService>();
 builder.Services.AddScoped<IJwtService, JwtService>();
 
+builder.Services.AddScoped<IDeviceService, DeviceService>();
+
 builder.Services.AddScoped<IAccountRepository, AccountRepository>();
+builder.Services.AddScoped<IDevicesRepository, DevicesRepository>();
+builder.Services.AddScoped<IIntegrationDeviceRepository, IntegrationDeviceRepository>();
 
 builder.Services.AddAuth(builder.Configuration);
 

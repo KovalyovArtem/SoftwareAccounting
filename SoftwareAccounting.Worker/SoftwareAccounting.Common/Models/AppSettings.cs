@@ -11,5 +11,7 @@ namespace SoftwareAccounting.Common.Models
         public required string ApiServiceUrl { get; set; }
 
         public required string SoftwareUrl { get; set; }
+
+        public string? Synonym { get; set; }
     }
 }

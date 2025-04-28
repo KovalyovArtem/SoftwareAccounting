@@ -1,6 +1,7 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using SoftwareAccounting.Library.Services.ActiveUtilityServices.Implementations;
 using SoftwareAccounting.Library.Services.ActiveUtilityServices.Interfaces;
 using SoftwareAccounting.Library.Services.DeviceScan.Interfaces;
 using System;
@@ -11,13 +12,16 @@ using System.Threading.Tasks;
 
 namespace SoftwareAccounting.Worker
 {
-    public class Worker(IServiceProvider serviceProvider) : BackgroundService
+    public class Worker(IHostApplicationLifetime appLifetime, IServiceProvider serviceProvider) : BackgroundService
     {
         private bool _requestIsSuccessful = false;
 
         protected override async Task ExecuteAsync(CancellationToken stoppingToken)
         {
-            stoppingToken.Register(() => OnShutdown());
+            appLifetime.ApplicationStopping.Register(() =>
+            {
+                OnShutdown().GetAwaiter().GetResult();
+            });
 
             while (!stoppingToken.IsCancellationRequested)
             {
@@ -28,8 +32,11 @@ namespace SoftwareAccounting.Worker
 
                 try
                 {
-                    var deviceSettings = _deviceScan.DoScanSettingsDevice();
-                    _requestIsSuccessful = await _activeService.SendInfoAboutDeviceIsActive(deviceSettings);
+                    if (!_requestIsSuccessful)
+                    {
+                        var deviceSettings = _deviceScan.DoScanSettingsDevice();
+                        _requestIsSuccessful = await _activeService.SendInfoAboutDeviceIsActive(deviceSettings);
+                    }
                 }
                 catch (Exception ex)
                 {
@@ -39,10 +46,14 @@ namespace SoftwareAccounting.Worker
             }
         }
 
-        private void OnShutdown()
+        private async Task OnShutdown()
         {
-            // Надо отправить запрос в API, что комп не активен
-            int p = 0;
+            using var scope = serviceProvider.CreateScope();
+            var _deviceScan = scope.ServiceProvider.GetService<IDeviceScan>();
+            var _activeService = scope.ServiceProvider.GetService<IActiveService>();
+
+            var deviceSettings = _deviceScan.DoScanSettingsDevice();
+            await _activeService.SendInfoAboutDeviceIsDeactivate(deviceSettings);
         }
     }
 }

@@ -9,5 +9,7 @@ namespace SoftwareAccounting.Library.Services.ActiveUtilityServices.Interfaces
         /// </summary>
         /// <returns>Возвращает true, если запрос был успешно отправлен, иначе false</returns>
         Task<bool> SendInfoAboutDeviceIsActive(DeviceSettingsModel model);
+
+        Task<bool> SendInfoAboutDeviceIsDeactivate(DeviceSettingsModel model);
     }
 }

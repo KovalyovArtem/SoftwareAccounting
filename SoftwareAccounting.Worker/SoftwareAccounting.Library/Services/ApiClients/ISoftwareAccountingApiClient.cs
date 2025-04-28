@@ -5,7 +5,10 @@ namespace SoftwareAccounting.Library.Services.ApiClients
 {
     public interface ISoftwareAccountingApiClient
     {
-        [Post("/DeviceInfo/SetDeviceActivateStatus")]
+        [Patch("/IntegrationDevice/SetDeviceActivateStatus")]
         Task<bool> SetDeviceActivateStatus([Body]DeviceRequestModel model);
+
+        [Patch("/IntegrationDevice/SetDeviceDeactivateStatus")]
+        Task SetDeviceDeactivateStatus([Body] DeviceDeactivateModel model);
     }
 }

@@ -46,5 +46,17 @@ namespace SoftwareAccounting.Library.Services.ActiveUtilityServices.Implementati
 
             return result;
         }
+
+        public async Task<bool> SendInfoAboutDeviceIsDeactivate(DeviceSettingsModel settings)
+        {
+            await _apiClient.SetDeviceDeactivateStatus(new DeviceDeactivateModel
+            {
+                DeviceName = settings.DeviceName,
+                MacAdress = settings.DeviceMacAddress,
+                Synonym = _appSettings.Value.Synonym
+            });
+
+            return true;
+        }
     }
 }
