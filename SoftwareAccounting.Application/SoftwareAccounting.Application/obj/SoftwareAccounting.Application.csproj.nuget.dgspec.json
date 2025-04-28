@@ -32,7 +32,17 @@
         "frameworks": {
           "net8.0": {
             "targetAlias": "net8.0",
-            "projectReferences": {}
+            "projectReferences": {
+              "P:\\SoftwareAccounting\\SoftwareAccounting.Application\\SoftwareAccounting.Common\\SoftwareAccounting.Common.csproj": {
+                "projectPath": "P:\\SoftwareAccounting\\SoftwareAccounting.Application\\SoftwareAccounting.Common\\SoftwareAccounting.Common.csproj"
+              },
+              "P:\\SoftwareAccounting\\SoftwareAccounting.Application\\SoftwareAccounting.Domain\\SoftwareAccounting.Domain.csproj": {
+                "projectPath": "P:\\SoftwareAccounting\\SoftwareAccounting.Application\\SoftwareAccounting.Domain\\SoftwareAccounting.Domain.csproj"
+              },
+              "P:\\SoftwareAccounting\\SoftwareAccounting.Application\\SoftwareAccounting.Service\\SoftwareAccounting.Service.csproj": {
+                "projectPath": "P:\\SoftwareAccounting\\SoftwareAccounting.Application\\SoftwareAccounting.Service\\SoftwareAccounting.Service.csproj"
+              }
+            }
           }
         },
         "warningProperties": {
@@ -75,6 +85,247 @@
             "Microsoft.AspNetCore.App": {
               "privateAssets": "none"
             },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.203/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "P:\\SoftwareAccounting\\SoftwareAccounting.Application\\SoftwareAccounting.Common\\SoftwareAccounting.Common.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "P:\\SoftwareAccounting\\SoftwareAccounting.Application\\SoftwareAccounting.Common\\SoftwareAccounting.Common.csproj",
+        "projectName": "SoftwareAccounting.Common",
+        "projectPath": "P:\\SoftwareAccounting\\SoftwareAccounting.Application\\SoftwareAccounting.Common\\SoftwareAccounting.Common.csproj",
+        "packagesPath": "C:\\Users\\Артём\\.nuget\\packages\\",
+        "outputPath": "P:\\SoftwareAccounting\\SoftwareAccounting.Application\\SoftwareAccounting.Common\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Артём\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.200"
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.203/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "P:\\SoftwareAccounting\\SoftwareAccounting.Application\\SoftwareAccounting.Domain\\SoftwareAccounting.Domain.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "P:\\SoftwareAccounting\\SoftwareAccounting.Application\\SoftwareAccounting.Domain\\SoftwareAccounting.Domain.csproj",
+        "projectName": "SoftwareAccounting.Domain",
+        "projectPath": "P:\\SoftwareAccounting\\SoftwareAccounting.Application\\SoftwareAccounting.Domain\\SoftwareAccounting.Domain.csproj",
+        "packagesPath": "C:\\Users\\Артём\\.nuget\\packages\\",
+        "outputPath": "P:\\SoftwareAccounting\\SoftwareAccounting.Application\\SoftwareAccounting.Domain\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Артём\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "P:\\SoftwareAccounting\\SoftwareAccounting.Application\\SoftwareAccounting.Common\\SoftwareAccounting.Common.csproj": {
+                "projectPath": "P:\\SoftwareAccounting\\SoftwareAccounting.Application\\SoftwareAccounting.Common\\SoftwareAccounting.Common.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.200"
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "Dapper": {
+              "target": "Package",
+              "version": "[2.1.66, )"
+            },
+            "Microsoft.Extensions.Options": {
+              "target": "Package",
+              "version": "[9.0.4, )"
+            },
+            "Npgsql": {
+              "target": "Package",
+              "version": "[9.0.3, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.203/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "P:\\SoftwareAccounting\\SoftwareAccounting.Application\\SoftwareAccounting.Service\\SoftwareAccounting.Service.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "P:\\SoftwareAccounting\\SoftwareAccounting.Application\\SoftwareAccounting.Service\\SoftwareAccounting.Service.csproj",
+        "projectName": "SoftwareAccounting.Service",
+        "projectPath": "P:\\SoftwareAccounting\\SoftwareAccounting.Application\\SoftwareAccounting.Service\\SoftwareAccounting.Service.csproj",
+        "packagesPath": "C:\\Users\\Артём\\.nuget\\packages\\",
+        "outputPath": "P:\\SoftwareAccounting\\SoftwareAccounting.Application\\SoftwareAccounting.Service\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Артём\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "P:\\SoftwareAccounting\\SoftwareAccounting.Application\\SoftwareAccounting.Common\\SoftwareAccounting.Common.csproj": {
+                "projectPath": "P:\\SoftwareAccounting\\SoftwareAccounting.Application\\SoftwareAccounting.Common\\SoftwareAccounting.Common.csproj"
+              },
+              "P:\\SoftwareAccounting\\SoftwareAccounting.Application\\SoftwareAccounting.Domain\\SoftwareAccounting.Domain.csproj": {
+                "projectPath": "P:\\SoftwareAccounting\\SoftwareAccounting.Application\\SoftwareAccounting.Domain\\SoftwareAccounting.Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.200"
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.Authentication.JwtBearer": {
+              "target": "Package",
+              "version": "[8.0.15, )"
+            },
+            "Microsoft.AspNetCore.Identity": {
+              "target": "Package",
+              "version": "[2.3.1, )"
+            },
+            "Microsoft.Extensions.Logging.Abstractions": {
+              "target": "Package",
+              "version": "[8.0.2, )"
+            },
+            "Microsoft.Extensions.Options": {
+              "target": "Package",
+              "version": "[9.0.4, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }

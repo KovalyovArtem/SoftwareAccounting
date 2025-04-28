@@ -8,6 +8,8 @@ namespace SoftwareAccounting.Service.Services.Interfaces
 {
     public interface IAccountService
     {
-        public void Register(string userName, string password, string firstName);
+        public Task Register(string userName, string password);
+
+        public Task<string> Login(string userName, string password);
     }
 }

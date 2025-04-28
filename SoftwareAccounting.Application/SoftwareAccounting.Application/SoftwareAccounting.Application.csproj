@@ -11,4 +11,10 @@
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.6.2" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\SoftwareAccounting.Common\SoftwareAccounting.Common.csproj" />
+    <ProjectReference Include="..\SoftwareAccounting.Domain\SoftwareAccounting.Domain.csproj" />
+    <ProjectReference Include="..\SoftwareAccounting.Service\SoftwareAccounting.Service.csproj" />
+  </ItemGroup>
+
 </Project>

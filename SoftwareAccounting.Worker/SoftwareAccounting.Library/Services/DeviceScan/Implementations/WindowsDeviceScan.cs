@@ -21,7 +21,7 @@ namespace SoftwareAccounting.Library.Services.DeviceScan.Implementations
         private readonly IOptions<AppSettings> _appSettings;
 
         public WindowsDeviceScan(ILogger<WindowsDeviceScan> logger,
-                                   IOptions<AppSettings> appSettings)
+                                 IOptions<AppSettings> appSettings)
         {
             logger = _logger;
             _appSettings = appSettings;
