@@ -60,7 +60,7 @@ namespace SoftwareAccounting.Library.Services.DeviceScan.Implementations
                         ProgrammDeveloper = GetDeveloper(subKey) ?? "N/A",
                         ProgrammLicense = GetLicense(subKey),
                         ProgrammVersion = subKey?.GetValue("DisplayVersion")?.ToString() ?? "N/A",
-                        ProgrammInstalledDate = realDate ? installDate.ToString("dd.mm.yyyy") : "N/A",
+                        ProgrammInstalledDate = realDate ? installDate.ToString("dd.MM.yyyy") : "N/A",
                         ProgrammSize = GetInstallSize(subKey),
                         ProgrammInstallLocation = subKey?.GetValue("InstallLocation")?.ToString() ?? "N/A",
                         ProgrammPublisher = subKey?.GetValue("Publisher")?.ToString() ?? "N/A"
@@ -124,7 +124,14 @@ namespace SoftwareAccounting.Library.Services.DeviceScan.Implementations
         ///<inheritdoc/>
         public List<HarwareInfoModel> DoScanHarwareDevice()
         {
-            return new List<HarwareInfoModel>();
+            return new List<HarwareInfoModel>
+            {
+                new HarwareInfoModel
+                {
+                    Name = "Видеокарта",
+                    Value = "RTX 4070 TI SUPER"
+                }
+            };
         }
 
         public DeviceSettingsModel DoScanSettingsDevice()
