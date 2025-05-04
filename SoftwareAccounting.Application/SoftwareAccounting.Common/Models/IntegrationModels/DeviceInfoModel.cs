@@ -1,13 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace SoftwareAccounting.Common.Models.IntegrationModels
+﻿namespace SoftwareAccounting.Common.Models.IntegrationModels
 {
     public class DeviceInfoModel
     {
+        public List<SoftwareInfoModel> SoftwareInfoList { get; set; } = new List<SoftwareInfoModel>();
 
+        public List<HarwareInfoModel> HarwareInfoList { get; set; } = new List<HarwareInfoModel>();
     }
 }

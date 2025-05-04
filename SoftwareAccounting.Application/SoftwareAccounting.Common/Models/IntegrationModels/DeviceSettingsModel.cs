@@ -21,5 +21,7 @@ namespace SoftwareAccounting.Common.Models.IntegrationModels
         public string? DeviceDNS { get; set; }
 
         public string? DevicLicense { get; set; }
+
+        public string? DeviceSynonym { get; set; }
     }
 }

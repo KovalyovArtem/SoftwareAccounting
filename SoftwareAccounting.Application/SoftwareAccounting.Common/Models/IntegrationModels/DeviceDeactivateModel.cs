@@ -13,5 +13,7 @@ namespace SoftwareAccounting.Common.Models.IntegrationModels
         public string? MacAdress { get; set; }
 
         public string? DeviceName { get; set; }
+
+        public string? DeviceIpAddress { get; set; }
     }
 }
