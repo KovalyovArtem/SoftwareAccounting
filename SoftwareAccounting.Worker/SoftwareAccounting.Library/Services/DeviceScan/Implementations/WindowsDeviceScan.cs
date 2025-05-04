@@ -143,6 +143,8 @@ namespace SoftwareAccounting.Library.Services.DeviceScan.Implementations
                 model.DeviceMacAddress = string.Join(":", nic.GetPhysicalAddress().GetAddressBytes().Select(b => b.ToString("X2")));
                 model.DeviceDNS = string.Join(", ", nic.GetIPProperties().DnsAddresses);
             }
+
+            model.DeviceIpAddress = localIP;
             
             return model;
         }

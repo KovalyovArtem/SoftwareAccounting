@@ -19,5 +19,9 @@ namespace SoftwareAccounting.Common.Models.RequestModels
         public string? DeviceDNS { get; set; }
 
         public string? DevicLicense { get; set; }
+
+        public string? DeviceIpAddress { get; set; }
+
+        public string? DeviceSynonym { get; set; }
     }
 }

@@ -39,7 +39,9 @@ namespace SoftwareAccounting.Library.Services.ActiveUtilityServices.Implementati
                 DeviceDNS = settings.DeviceDNS,
                 DeviceMacAddress = settings.DeviceMacAddress,
                 DeviceName = settings.DeviceName,
-                DeviceOSArchitecture = settings.DeviceOSArchitecture
+                DeviceOSArchitecture = settings.DeviceOSArchitecture,
+                DeviceIpAddress = settings.DeviceIpAddress,
+                DeviceSynonym = _appSettings.Value.Synonym
             };
 
             var result = await _apiClient.SetDeviceActivateStatus(request);
