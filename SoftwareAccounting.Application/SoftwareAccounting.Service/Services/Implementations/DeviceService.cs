@@ -1,6 +1,7 @@
 ﻿using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using SoftwareAccounting.Common.Models;
+using SoftwareAccounting.Common.Models.IntegrationModels;
 using SoftwareAccounting.Domain.Models;
 using SoftwareAccounting.Domain.Repositories.Interfaces;
 using SoftwareAccounting.Service.Services.Interfaces;
@@ -29,16 +30,16 @@ namespace SoftwareAccounting.Service.Services.Implementations
             _devicesRepository = devicesRepository;
         }
 
-        public async Task<List<DeviceInfoModel>> GetDevicesInfo()
+        public async Task<List<DeviceSettingsInfoModel>> GetDevicesInfo()
         {
             var devices = await _devicesRepository.GetDevicesAsync();
             return devices;
         }
 
-        public async Task<DeviceExtensionInfoModel> GetDeviceInfo(Guid deviceId)
+        public async Task<List<SoftwareInfoModel>> GetSoftwareDeviceInfo(string deviceId)
         {
-            var deviceExt = await _devicesRepository.GetDeviceInfoAsync(deviceId);
-            return deviceExt;
+            var deviceSoftware = await _devicesRepository.GetSoftwareDeviceInfoAsync(Guid.Parse(deviceId));
+            return deviceSoftware;
         }
     }
 }

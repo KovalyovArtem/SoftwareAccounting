@@ -3,6 +3,7 @@ using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using Npgsql;
 using SoftwareAccounting.Common.Models;
+using SoftwareAccounting.Common.Models.IntegrationModels;
 using SoftwareAccounting.Common.Models.RegisterModels;
 using SoftwareAccounting.Domain.Models;
 using SoftwareAccounting.Domain.Repositories.Interfaces;
@@ -25,7 +26,7 @@ namespace SoftwareAccounting.Domain.Repositories.Implementations
             _settings = settings;
         }
 
-        public async Task<List<DeviceInfoModel>> GetDevicesAsync()
+        public async Task<List<DeviceSettingsInfoModel>> GetDevicesAsync()
         {
             #region SQL
 
@@ -33,6 +34,7 @@ namespace SoftwareAccounting.Domain.Repositories.Implementations
 
 SELECT d.id AS Id,
 	   d.sotr AS Sotr,
+	   d.synonym AS Synonym,
 	   d.ip_address AS IpAddress,
 	   d.mac_address AS MacAddress,
 	   d.is_active AS IsActive,
@@ -46,18 +48,28 @@ FROM mir.device d
 
             using (NpgsqlConnection dbConnection = await _dataSource.OpenConnectionAsync())
             {
-                var res = await dbConnection.QueryAsync<DeviceInfoModel>(sql);
+                var res = await dbConnection.QueryAsync<DeviceSettingsInfoModel>(sql);
                 return res.ToList();
             }
         }
 
-        public async Task<DeviceExtensionInfoModel> GetDeviceInfoAsync(Guid id)
+        public async Task<List<SoftwareInfoModel>> GetSoftwareDeviceInfoAsync(Guid id)
         {
             #region SQL
 
             var sql = @"
 
-
+SELECT s.id AS Id,
+	   s.name AS ProgrammName,
+	   s.version AS ProgrammVersion,
+	   s.developer AS ProgrammDeveloper,
+	   s.license AS ProgrammLicense,
+	   s.installed_date AS ProgrammInstalledDate,
+	   s.size AS ProgrammSize,
+	   s.install_location AS ProgrammInstallLocation,
+	   s.publisher AS ProgrammPublisher
+FROM mir.software s 
+WHERE s.device_id = @id
 
 ";
 
@@ -65,8 +77,12 @@ FROM mir.device d
 
             using (NpgsqlConnection dbConnection = await _dataSource.OpenConnectionAsync())
             {
-                var res = await dbConnection.QueryFirstOrDefaultAsync<DeviceExtensionInfoModel>(sql);
-                return res;
+                var param = new
+                {
+                    id
+                };
+                var res = await dbConnection.QueryAsync<SoftwareInfoModel>(sql, param);
+                return res.ToList();
             }
         }
     }

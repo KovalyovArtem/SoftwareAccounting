@@ -1,11 +1,12 @@
-﻿using SoftwareAccounting.Domain.Models;
+﻿using SoftwareAccounting.Common.Models.IntegrationModels;
+using SoftwareAccounting.Domain.Models;
 
 namespace SoftwareAccounting.Domain.Repositories.Interfaces
 {
     public interface IDevicesRepository
     {
-        Task<List<DeviceInfoModel>> GetDevicesAsync();
+        Task<List<DeviceSettingsInfoModel>> GetDevicesAsync();
 
-        Task<DeviceExtensionInfoModel> GetDeviceInfoAsync(Guid id);
+        Task<List<SoftwareInfoModel>> GetSoftwareDeviceInfoAsync(Guid id);
     }
 }

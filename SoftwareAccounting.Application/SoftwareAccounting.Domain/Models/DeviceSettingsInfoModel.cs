@@ -1,13 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Numerics;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace SoftwareAccounting.Domain.Models
+﻿namespace SoftwareAccounting.Domain.Models
 {
-    public class DeviceInfoModel
+    public class DeviceSettingsInfoModel
     {
         public Guid Id { get; set; }
         public Guid? Sotr { get; set; }

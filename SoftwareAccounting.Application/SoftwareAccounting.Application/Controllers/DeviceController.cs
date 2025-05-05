@@ -9,7 +9,7 @@ namespace SoftwareAccounting.Application.Controllers
 {
     [ApiController]
     [Route("[controller]")]
-    [Authorize]
+    //[Authorize]
     public class DeviceController : ControllerBase
     {
         private readonly ILogger<DeviceController> _logger;
@@ -29,11 +29,25 @@ namespace SoftwareAccounting.Application.Controllers
         }
 
         [HttpGet("GetAllDevices")]
-        public async Task<IActionResult> GetAllDevices([FromBody] RegisterUserRequest request)
+        public async Task<IActionResult> GetAllDevices()
         {
             try
             {
                 var devices = await _deviceService.GetDevicesInfo();
+                return Ok(devices);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+
+        [HttpGet("GetSoftwareInfo")]
+        public async Task<IActionResult> GetSoftwareInfo([FromQuery] string deviceId)
+        {
+            try
+            {
+                var devices = await _deviceService.GetSoftwareDeviceInfo(deviceId);
                 return Ok(devices);
             }
             catch (Exception ex)

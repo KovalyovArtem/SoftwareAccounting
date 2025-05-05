@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace SoftwareAccounting.Common.Models.IntegrationModels
+﻿namespace SoftwareAccounting.Common.Models
 {
     public class SoftwareInfoModel
     {

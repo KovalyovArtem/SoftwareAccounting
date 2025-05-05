@@ -1,11 +1,12 @@
-﻿using SoftwareAccounting.Domain.Models;
+﻿using SoftwareAccounting.Common.Models.IntegrationModels;
+using SoftwareAccounting.Domain.Models;
 
 namespace SoftwareAccounting.Service.Services.Interfaces
 {
     public interface IDeviceService
     {
-        Task<List<DeviceInfoModel>> GetDevicesInfo();
+        Task<List<DeviceSettingsInfoModel>> GetDevicesInfo();
 
-        Task<DeviceExtensionInfoModel> GetDeviceInfo(Guid deviceId);
+        Task<List<SoftwareInfoModel>> GetSoftwareDeviceInfo(string deviceId);
     }
 }
