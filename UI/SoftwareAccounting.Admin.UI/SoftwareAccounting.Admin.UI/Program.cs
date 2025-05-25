@@ -1,4 +1,5 @@
 using Refit;
+using SoftwareAccounting.Admin.UI.Forms;
 using SoftwareAccounting.Service.Services.ApiClient;
 using SoftwareAccounting.Service.Services.Implementations;
 using SoftwareAccounting.Service.Services.Interfaces;
@@ -25,7 +26,7 @@ namespace SoftwareAccounting.Admin.UI
 
             deviceService = new DeviceService(apiClient);
 
-            Application.Run(new MainForm());
+            Application.Run(new LoginForm());
         }
 
         private static ISoftwareAccountingApiClient CreateApiClient(string baseUrl)
