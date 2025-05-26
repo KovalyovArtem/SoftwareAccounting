@@ -28,9 +28,9 @@ namespace SoftwareAccounting.Application.Controllers
         [HttpPost("Register")]
         public async Task<IActionResult> Register([FromBody] RegisterUserRequest request)
         {
-            await _accountService.Register(request.UserName, request.Password);
+            var res = await _accountService.Register(request.UserName, request.Password);
 
-            return NoContent();
+            return Ok(res);
         }
 
         [HttpPost("Login")]

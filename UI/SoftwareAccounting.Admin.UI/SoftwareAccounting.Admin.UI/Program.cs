@@ -26,7 +26,7 @@ namespace SoftwareAccounting.Admin.UI
 
             deviceService = new DeviceService(apiClient);
 
-            Application.Run(new LoginForm());
+            Application.Run(new MainForm());
         }
 
         private static ISoftwareAccountingApiClient CreateApiClient(string baseUrl)

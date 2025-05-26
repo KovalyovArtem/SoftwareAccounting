@@ -33,15 +33,26 @@ namespace SoftwareAccounting.Service.Services.Implementations
             _jwtService = jwtService;
         }
 
+        public AccountService(
+            IAccountRepository accountRepository,
+            IJwtService jwtService)
+        {
+            _accountRepository = accountRepository;
+            _jwtService = jwtService;
+        }
+
+
         /// <summary>
         /// Регистрация пользователя
         /// </summary>
         /// <param name="userName">Логин</param>
         /// <param name="password">Пароль</param>
         /// <returns></returns>
-        public async Task Register(string userName, string password)
+        public async Task<string> Register(string userName, string password)
         {
             // Надо сделать проверку на существование пользователя с таким же именем
+            if (userName == "admin")
+                return "Пользователь с таким логином уже существует";
 
             var model = new AccountModel
             {
@@ -53,6 +64,8 @@ namespace SoftwareAccounting.Service.Services.Implementations
             model.HashPassword = hashPassword;
 
             var p = await _accountRepository.RegisterUser(model);
+
+            return "Регистрация прошла успешно";
         }
 
         /// <summary>
