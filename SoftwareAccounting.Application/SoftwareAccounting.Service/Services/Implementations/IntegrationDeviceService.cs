@@ -20,6 +20,7 @@ namespace SoftwareAccounting.Service.Services.Implementations
         private readonly IOptions<AppSettings> _settings;
 
         private readonly IIntegrationDeviceRepository _integrationDeviceRepository;
+        private readonly IDevicesRepository _devicesRepository;
 
         private readonly IAccountingApiClientFactory _clientFactory;
 
@@ -27,11 +28,15 @@ namespace SoftwareAccounting.Service.Services.Implementations
             ILogger<IntegrationDeviceService> logger,
             IOptions<AppSettings> settings,
             IIntegrationDeviceRepository integrationDeviceRepository,
+            IDevicesRepository devicesRepository,
             IAccountingApiClientFactory clientFactory)
         {
             _logger = logger;
             _settings = settings;
+
             _integrationDeviceRepository = integrationDeviceRepository;
+            _devicesRepository = devicesRepository;
+            
             _clientFactory = clientFactory;
         }
 
@@ -133,6 +138,57 @@ namespace SoftwareAccounting.Service.Services.Implementations
             }
 
             var deviceId = await _integrationDeviceRepository.GetDeviceIdByIpAddress(ipAddress);
+
+            await _integrationDeviceRepository.ClearDeviceInfotables(deviceId);
+
+            foreach (var software in deviceInfo.SoftwareInfoList)
+            {
+                result = await _integrationDeviceRepository.InsertSoftwareDeviceInfo(deviceId, software);
+                if (result == false)
+                {
+                    _logger.LogError($"Failed to insert software {deviceId}, {software}");
+                    continue;
+                }
+            }
+
+            foreach (var hardware in deviceInfo.HarwareInfoList)
+            {
+                result = await _integrationDeviceRepository.InsertHardwareDeviceInfo(deviceId, hardware);
+                if (result == false)
+                {
+                    _logger.LogError($"Failed to insert software {deviceId}, {hardware}");
+                    continue;
+                }
+            }
+
+            return result;
+        }
+
+        public async Task<bool> StartDeviceScanById(Guid deviceId)
+        {
+            var deviceInfo = new DeviceInfoModel();
+            bool result = false;
+
+            var ipAddress = await _devicesRepository.GetDeviceIpAddressByIdAsync(deviceId);
+            if(string.IsNullOrEmpty(ipAddress))
+            {
+                _logger.LogError("Не удалось найти id устройста {0}", deviceId);
+                return false;
+            }
+
+            try
+            {
+                var client = _clientFactory.CreateClient("http://" + ipAddress + ":15080");
+                var response = await client.GetDeviceInfo();
+                if (response.IsSuccessful && response.Content != null)
+                {
+                    deviceInfo = response.Content;
+                }
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Ошибка при запросе к {Host}", ipAddress);
+            }
 
             await _integrationDeviceRepository.ClearDeviceInfotables(deviceId);
 

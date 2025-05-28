@@ -85,5 +85,28 @@ WHERE s.device_id = @id
                 return res.ToList();
             }
         }
+
+        public async Task<string?> GetDeviceIpAddressByIdAsync(Guid deviceId)
+        {
+            #region SQL
+
+            var sql = @"
+
+SELECT d.ip_address AS IpAddress
+FROM mir.device d
+WHERE d.id = @deviceId
+LIMIT 1
+
+";
+
+            #endregion
+
+            using (NpgsqlConnection dbConnection = await _dataSource.OpenConnectionAsync())
+            {
+                var param = new { deviceId };
+                var res = await dbConnection.QueryFirstOrDefaultAsync<string>(sql, param);
+                return res;
+            }
+        }
     }
 }

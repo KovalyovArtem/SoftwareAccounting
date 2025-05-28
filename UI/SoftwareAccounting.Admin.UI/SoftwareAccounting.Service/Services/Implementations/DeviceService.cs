@@ -35,5 +35,27 @@ namespace SoftwareAccounting.Service.Services.Implementations
 
             return null;
         }
+
+        public async Task<bool> StartDeviceScan()
+        {
+            var response = await _apiClient.StartDevicesScan();
+            if (response.IsSuccessStatusCode)
+            {
+                return response.Content;
+            }
+
+            return false;
+        }
+
+        public async Task<bool> StartDeviceScan(string ipAddress)
+        {
+            var response = await _apiClient.StartDeviceScan(ipAddress);
+            if (response.IsSuccessStatusCode)
+            {
+                return response.Content;
+            }
+
+            return false;
+        }
     }
 }

@@ -2,6 +2,7 @@
 using Microsoft.Extensions.Options;
 using SoftwareAccounting.Common.Models;
 using SoftwareAccounting.Common.Models.IntegrationModels;
+using SoftwareAccounting.Domain.Repositories.Interfaces;
 using SoftwareAccounting.Service.Services.Interfaces;
 
 namespace SoftwareAccounting.Application.Controllers
@@ -12,6 +13,7 @@ namespace SoftwareAccounting.Application.Controllers
     {
         private readonly ILogger<IntegrationDeviceController> _logger;
         private readonly IOptions<AppSettings> _settings;
+        
         private readonly IIntegrationDeviceService _integrationDeviceService;
 
         public IntegrationDeviceController(
@@ -21,6 +23,7 @@ namespace SoftwareAccounting.Application.Controllers
         {
             _logger = logger;
             _settings = settings;
+
             _integrationDeviceService = integrationDeviceService;
         }
 
@@ -67,6 +70,13 @@ namespace SoftwareAccounting.Application.Controllers
         public async Task<IActionResult> ProcessingDeviceScan([FromQuery]string ipAddress)
         {
             var res = await _integrationDeviceService.StartDeviceScan(ipAddress);
+            return Ok(res);
+        }
+
+        [HttpGet("ProcessingDeviceByIdScan")]
+        public async Task<IActionResult> ProcessingDeviceByIdScan([FromQuery] string deviceId)
+        {
+            var res = await _integrationDeviceService.StartDeviceScanById(Guid.Parse(deviceId));
             return Ok(res);
         }
     }

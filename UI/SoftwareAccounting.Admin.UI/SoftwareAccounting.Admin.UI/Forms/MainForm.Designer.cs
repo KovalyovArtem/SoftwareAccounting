@@ -34,18 +34,19 @@ namespace SoftwareAccounting.Admin.UI
             файлToolStripMenuItem = new ToolStripMenuItem();
             ts_Action = new ToolStripMenuItem();
             ts_item_Accounting = new ToolStripMenuItem();
+            ts_item_Accounting_Once = new ToolStripMenuItem();
             splitContainerMain = new SplitContainer();
             dgv_Main = new DataGridView();
-            panel1 = new Panel();
             dgv_Additional = new DataGridView();
+            panel1 = new Panel();
             ms_Main.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)splitContainerMain).BeginInit();
             splitContainerMain.Panel1.SuspendLayout();
             splitContainerMain.Panel2.SuspendLayout();
             splitContainerMain.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgv_Main).BeginInit();
-            panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgv_Additional).BeginInit();
+            panel1.SuspendLayout();
             SuspendLayout();
             // 
             // ms_Main
@@ -66,7 +67,7 @@ namespace SoftwareAccounting.Admin.UI
             // 
             // ts_Action
             // 
-            ts_Action.DropDownItems.AddRange(new ToolStripItem[] { ts_item_Accounting });
+            ts_Action.DropDownItems.AddRange(new ToolStripItem[] { ts_item_Accounting, ts_item_Accounting_Once });
             ts_Action.Name = "ts_Action";
             ts_Action.Size = new Size(70, 20);
             ts_Action.Text = "Действия";
@@ -74,9 +75,16 @@ namespace SoftwareAccounting.Admin.UI
             // ts_item_Accounting
             // 
             ts_item_Accounting.Name = "ts_item_Accounting";
-            ts_item_Accounting.Size = new Size(134, 22);
-            ts_item_Accounting.Text = "Сверка ПО";
+            ts_item_Accounting.Size = new Size(224, 22);
+            ts_item_Accounting.Text = "Сверка ПО всех ПК";
             ts_item_Accounting.Click += ts_item_Accounting_Click;
+            // 
+            // ts_item_Accounting_Once
+            // 
+            ts_item_Accounting_Once.Name = "ts_item_Accounting_Once";
+            ts_item_Accounting_Once.Size = new Size(224, 22);
+            ts_item_Accounting_Once.Text = "Сверка ПО выбранного ПК";
+            ts_item_Accounting_Once.Click += ts_item_Accounting_Once_Click;
             // 
             // splitContainerMain
             // 
@@ -108,15 +116,6 @@ namespace SoftwareAccounting.Admin.UI
             dgv_Main.TabIndex = 0;
             dgv_Main.CellClick += dgv_Main_CellClick;
             // 
-            // panel1
-            // 
-            panel1.Controls.Add(splitContainerMain);
-            panel1.Dock = DockStyle.Fill;
-            panel1.Location = new Point(0, 24);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(1217, 640);
-            panel1.TabIndex = 2;
-            // 
             // dgv_Additional
             // 
             dgv_Additional.AllowUserToAddRows = false;
@@ -128,6 +127,15 @@ namespace SoftwareAccounting.Admin.UI
             dgv_Additional.ReadOnly = true;
             dgv_Additional.Size = new Size(570, 640);
             dgv_Additional.TabIndex = 0;
+            // 
+            // panel1
+            // 
+            panel1.Controls.Add(splitContainerMain);
+            panel1.Dock = DockStyle.Fill;
+            panel1.Location = new Point(0, 24);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(1217, 640);
+            panel1.TabIndex = 2;
             // 
             // MainForm
             // 
@@ -141,6 +149,7 @@ namespace SoftwareAccounting.Admin.UI
             Name = "MainForm";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "SoftwareAccounting";
+            FormClosing += MainForm_FormClosing;
             ms_Main.ResumeLayout(false);
             ms_Main.PerformLayout();
             splitContainerMain.Panel1.ResumeLayout(false);
@@ -148,8 +157,8 @@ namespace SoftwareAccounting.Admin.UI
             ((System.ComponentModel.ISupportInitialize)splitContainerMain).EndInit();
             splitContainerMain.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dgv_Main).EndInit();
-            panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dgv_Additional).EndInit();
+            panel1.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
         }
@@ -164,5 +173,6 @@ namespace SoftwareAccounting.Admin.UI
         private Panel panel1;
         private DataGridView dgv_Main;
         private DataGridView dgv_Additional;
+        private ToolStripMenuItem ts_item_Accounting_Once;
     }
 }

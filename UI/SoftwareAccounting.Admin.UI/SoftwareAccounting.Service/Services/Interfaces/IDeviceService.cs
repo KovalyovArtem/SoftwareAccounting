@@ -7,5 +7,9 @@ namespace SoftwareAccounting.Service.Services.Interfaces
         Task<List<DeviceInfoModel>> GetDevices();
 
         Task<List<SoftwareInfoModel>> GetDeviceSoftwareInfo(string deviceId);
+
+        Task<bool> StartDeviceScan();
+
+        Task<bool> StartDeviceScan(string ipAddress);
     }
 }
