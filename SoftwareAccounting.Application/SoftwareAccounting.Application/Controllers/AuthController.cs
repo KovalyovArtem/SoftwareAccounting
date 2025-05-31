@@ -34,9 +34,12 @@ namespace SoftwareAccounting.Application.Controllers
         }
 
         [HttpPost("Login")]
-        public async Task<IActionResult> Login([FromBody] RegisterUserRequest request)
+        public async Task<IActionResult> Login([FromBody] RegisterUserRequest request, HttpContext httpContext)
         {
             var token = await _accountService.Login(request.UserName, request.Password);
+
+            httpContext.Response.Cookies.Append("tasty-cookies", token);
+
             return Ok(token);
         }
     }

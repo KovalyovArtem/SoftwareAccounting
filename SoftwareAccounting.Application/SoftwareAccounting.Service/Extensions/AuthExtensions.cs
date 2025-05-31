@@ -27,6 +27,16 @@ namespace SoftwareAccounting.Service.Extensions
                         ValidateIssuerSigningKey = true,
                         IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(settings.AuthSettings.SecretKey))
                     };
+
+                    opt.Events = new JwtBearerEvents
+                    {
+                        OnMessageReceived = context =>
+                        {
+                            context.Token = context.Request.Cookies["tasty-cookies"];
+
+                            return Task.CompletedTask;
+                        }
+                    };
                 });
 
             return serviceCollection;
