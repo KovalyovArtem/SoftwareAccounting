@@ -1,3 +1,5 @@
+using SoftwareAccounting.Admin.UI.Forms.PeopleForms;
+using SoftwareAccounting.Admin.UI.Forms.PeopleForms.EmployerForms;
 using SoftwareAccounting.Common.Models;
 using SoftwareAccounting.Service.Services.Implementations;
 using SoftwareAccounting.Service.Services.Interfaces;
@@ -20,6 +22,9 @@ namespace SoftwareAccounting.Admin.UI
 
             var devices = Task.Run(() => GetDevicesList());
             dgv_Main.DataSource = devices.Result;
+
+            dgv_Main.Columns[0].Visible = false;
+            dgv_Main.Columns[1].Visible = false;
         }
 
         private async Task<List<DeviceInfoModel>> GetDevicesList()
@@ -65,6 +70,7 @@ namespace SoftwareAccounting.Admin.UI
                         return;
                     }
                     dgv_Additional.DataSource = res;
+                    dgv_Additional.Columns[0].Visible = false;
                 }
             }
             catch (Exception ex)
@@ -98,7 +104,7 @@ namespace SoftwareAccounting.Admin.UI
                 if (dgv_Main.SelectedCells.Count > 0 || dgv_Main.SelectedRows.Count > 0)
                 {
                     var rowIndex = dgv_Main.SelectedCells[0].RowIndex;
-                    if(Convert.ToBoolean(dgv_Main.Rows[rowIndex].Cells[5].Value) == false)
+                    if (Convert.ToBoolean(dgv_Main.Rows[rowIndex].Cells[5].Value) == false)
                     {
                         MessageBox.Show($"Данный ПК не в сети!");
                         return;
@@ -122,6 +128,16 @@ namespace SoftwareAccounting.Admin.UI
             {
                 MessageBox.Show(ex.Message, "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void ts_item_Users_Click(object sender, EventArgs e)
+        {
+            new UserForm().ShowDialog();
+        }
+
+        private void ts_item_Employers_Click(object sender, EventArgs e)
+        {
+            new EmployerForm().ShowDialog();
         }
     }
 }

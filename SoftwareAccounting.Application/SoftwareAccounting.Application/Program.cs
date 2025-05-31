@@ -33,10 +33,12 @@ builder.Services.AddScoped<IJwtService, JwtService>();
 
 builder.Services.AddScoped<IDeviceService, DeviceService>();
 builder.Services.AddScoped<IIntegrationDeviceService, IntegrationDeviceService>();
+builder.Services.AddScoped<IPeopleService, PeopleService>();
 
 builder.Services.AddScoped<IAccountRepository, AccountRepository>();
 builder.Services.AddScoped<IDevicesRepository, DevicesRepository>();
 builder.Services.AddScoped<IIntegrationDeviceRepository, IntegrationDeviceRepository>();
+builder.Services.AddScoped<IPeopleRepository, PeopleRepository>();
 
 builder.Services.AddAuth(builder.Configuration);
 

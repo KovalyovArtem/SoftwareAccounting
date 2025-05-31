@@ -14,6 +14,7 @@ namespace SoftwareAccounting.Admin.UI
     {
         public static ISoftwareAccountingApiClient apiClient { get; private set; }
         public static IDeviceService deviceService { get; private set; }
+        public static IPeopleService peopleService { get; private set; }
 
         public static IAuthService authService { get; private set; }
 
@@ -73,6 +74,7 @@ namespace SoftwareAccounting.Admin.UI
             apiClient = RestService.For<ISoftwareAccountingApiClient>(httpClient);
             authService = new AuthService(apiClient);
             deviceService = new DeviceService(apiClient);
+            peopleService = new PeopleService(apiClient);
         }
 
         private static async Task<bool> RefreshTokenAsync(AuthState authState)

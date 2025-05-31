@@ -35,6 +35,9 @@ namespace SoftwareAccounting.Admin.UI
             ts_Action = new ToolStripMenuItem();
             ts_item_Accounting = new ToolStripMenuItem();
             ts_item_Accounting_Once = new ToolStripMenuItem();
+            администрированиеToolStripMenuItem = new ToolStripMenuItem();
+            ts_item_Users = new ToolStripMenuItem();
+            ts_item_Employers = new ToolStripMenuItem();
             splitContainerMain = new SplitContainer();
             dgv_Main = new DataGridView();
             dgv_Additional = new DataGridView();
@@ -52,7 +55,7 @@ namespace SoftwareAccounting.Admin.UI
             // ms_Main
             // 
             ms_Main.BackColor = SystemColors.ControlLight;
-            ms_Main.Items.AddRange(new ToolStripItem[] { файлToolStripMenuItem, ts_Action });
+            ms_Main.Items.AddRange(new ToolStripItem[] { файлToolStripMenuItem, ts_Action, администрированиеToolStripMenuItem });
             ms_Main.Location = new Point(0, 0);
             ms_Main.Name = "ms_Main";
             ms_Main.Size = new Size(1217, 24);
@@ -85,6 +88,27 @@ namespace SoftwareAccounting.Admin.UI
             ts_item_Accounting_Once.Size = new Size(224, 22);
             ts_item_Accounting_Once.Text = "Сверка ПО выбранного ПК";
             ts_item_Accounting_Once.Click += ts_item_Accounting_Once_Click;
+            // 
+            // администрированиеToolStripMenuItem
+            // 
+            администрированиеToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { ts_item_Users, ts_item_Employers });
+            администрированиеToolStripMenuItem.Name = "администрированиеToolStripMenuItem";
+            администрированиеToolStripMenuItem.Size = new Size(134, 20);
+            администрированиеToolStripMenuItem.Text = "Администрирование";
+            // 
+            // ts_item_Users
+            // 
+            ts_item_Users.Name = "ts_item_Users";
+            ts_item_Users.Size = new Size(180, 22);
+            ts_item_Users.Text = "Пользователи";
+            ts_item_Users.Click += ts_item_Users_Click;
+            // 
+            // ts_item_Employers
+            // 
+            ts_item_Employers.Name = "ts_item_Employers";
+            ts_item_Employers.Size = new Size(180, 22);
+            ts_item_Employers.Text = "Сотрудники";
+            ts_item_Employers.Click += ts_item_Employers_Click;
             // 
             // splitContainerMain
             // 
@@ -174,5 +198,8 @@ namespace SoftwareAccounting.Admin.UI
         private DataGridView dgv_Main;
         private DataGridView dgv_Additional;
         private ToolStripMenuItem ts_item_Accounting_Once;
+        private ToolStripMenuItem администрированиеToolStripMenuItem;
+        private ToolStripMenuItem ts_item_Users;
+        private ToolStripMenuItem ts_item_Employers;
     }
 }

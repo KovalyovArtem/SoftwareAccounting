@@ -1,6 +1,7 @@
 ﻿using Refit;
 using SoftwareAccounting.Common.Models;
 using SoftwareAccounting.Common.Models.AuthModel;
+using SoftwareAccounting.Common.Models.Poeple;
 
 namespace SoftwareAccounting.Service.Services.ApiClient
 {
@@ -20,5 +21,11 @@ namespace SoftwareAccounting.Service.Services.ApiClient
 
         [Post("/Auth/Login")]
         Task<ApiResponse<string>> Login(RegisterUserRequest user);
+
+        [Get("/People/GetAllUsers")]
+        Task<ApiResponse<List<User>>> GetAllUsers();
+
+        [Get("/People/GetAllEmployers")]
+        Task<ApiResponse<List<Employer>>> GetAllEmployers();
     }
 }
