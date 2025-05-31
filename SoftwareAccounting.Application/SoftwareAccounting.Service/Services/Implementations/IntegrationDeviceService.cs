@@ -69,7 +69,7 @@ namespace SoftwareAccounting.Service.Services.Implementations
             CancellationToken ct = default;
             await Parallel.ForEachAsync(hostUrls, new ParallelOptions
             {
-                MaxDegreeOfParallelism = 6,
+                MaxDegreeOfParallelism = _settings.Value.MaxScanningPool,
                 CancellationToken = ct
             }, async (hostUrl, cancellationToken) =>
             {
@@ -189,6 +189,9 @@ namespace SoftwareAccounting.Service.Services.Implementations
             {
                 _logger.LogError(ex, "Ошибка при запросе к {Host}", ipAddress);
             }
+
+            if(deviceInfo == null)
+                return false;
 
             await _integrationDeviceRepository.ClearDeviceInfotables(deviceId);
 

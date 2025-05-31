@@ -7,6 +7,8 @@ namespace SoftwareAccounting.Service.Services.Interfaces
     {
         Task<List<DeviceSettingsInfoModel>> GetDevicesInfo();
 
+        Task<DeviceSettingsInfoModel> GetDeviceInfo(string deviceId);
+
         Task<List<SoftwareInfoModel>> GetSoftwareDeviceInfo(string deviceId);
     }
 }

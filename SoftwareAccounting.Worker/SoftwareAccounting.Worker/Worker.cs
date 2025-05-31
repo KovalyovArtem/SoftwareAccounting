@@ -34,7 +34,7 @@ namespace SoftwareAccounting.Worker
                 {
                     if (!_requestIsSuccessful)
                     {
-                        var deviceSettings = _deviceScan.DoScanSettingsDevice();
+                        var deviceSettings = await Task.Run(() => _deviceScan.DoScanSettingsDevice());
                         _requestIsSuccessful = await _activeService.SendInfoAboutDeviceIsActive(deviceSettings);
                     }
                 }
@@ -52,7 +52,7 @@ namespace SoftwareAccounting.Worker
             var _deviceScan = scope.ServiceProvider.GetService<IDeviceScan>();
             var _activeService = scope.ServiceProvider.GetService<IActiveService>();
 
-            var deviceSettings = _deviceScan.DoScanSettingsDevice();
+            var deviceSettings = await Task.Run(() => _deviceScan.DoScanSettingsDevice());
             await _activeService.SendInfoAboutDeviceIsDeactivate(deviceSettings);
         }
     }

@@ -36,6 +36,17 @@ namespace SoftwareAccounting.Service.Services.Implementations
             return devices;
         }
 
+        public async Task<DeviceSettingsInfoModel> GetDeviceInfo(string deviceId)
+        {
+            if (Guid.TryParse(deviceId, out var id))
+            {
+                var devices = await _devicesRepository.GetDeviceByIdAsync(id);
+                return devices;
+            }
+
+            return null;
+        }
+
         public async Task<List<SoftwareInfoModel>> GetSoftwareDeviceInfo(string deviceId)
         {
             var deviceSoftware = await _devicesRepository.GetSoftwareDeviceInfoAsync(Guid.Parse(deviceId));

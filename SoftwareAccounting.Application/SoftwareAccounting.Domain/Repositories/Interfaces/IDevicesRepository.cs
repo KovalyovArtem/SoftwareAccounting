@@ -7,6 +7,8 @@ namespace SoftwareAccounting.Domain.Repositories.Interfaces
     {
         Task<List<DeviceSettingsInfoModel>> GetDevicesAsync();
 
+        Task<DeviceSettingsInfoModel> GetDeviceByIdAsync(Guid deviceId);
+
         Task<List<SoftwareInfoModel>> GetSoftwareDeviceInfoAsync(Guid id);
 
         Task<string?> GetDeviceIpAddressByIdAsync(Guid deviceId);

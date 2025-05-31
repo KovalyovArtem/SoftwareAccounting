@@ -48,6 +48,12 @@ builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
 
+app.UseCors(builder =>
+            builder.SetIsOriginAllowed(origin => true)
+            .AllowCredentials()
+            .AllowAnyHeader()
+            .AllowAnyMethod());
+
 app.UseAuthentication();
 app.UseAuthorization();
 

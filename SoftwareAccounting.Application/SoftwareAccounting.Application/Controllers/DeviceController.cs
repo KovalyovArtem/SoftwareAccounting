@@ -9,7 +9,6 @@ namespace SoftwareAccounting.Application.Controllers
 {
     [ApiController]
     [Route("[controller]")]
-    [Authorize]
     public class DeviceController : ControllerBase
     {
         private readonly ILogger<DeviceController> _logger;
@@ -34,6 +33,20 @@ namespace SoftwareAccounting.Application.Controllers
             try
             {
                 var devices = await _deviceService.GetDevicesInfo();
+                return Ok(devices);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+
+        [HttpGet("GetDevice")]
+        public async Task<IActionResult> GetDevice([FromQuery] string deviceId)
+        {
+            try
+            {
+                var devices = await _deviceService.GetDeviceInfo(deviceId);
                 return Ok(devices);
             }
             catch (Exception ex)

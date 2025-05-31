@@ -12,6 +12,8 @@ namespace SoftwareAccounting.Common.Models
 
         public required bool IsLog { get; set; }
 
+        public required int MaxScanningPool { get; set; }
+
         public required AuthSettings AuthSettings { get; set; }
     }
 }

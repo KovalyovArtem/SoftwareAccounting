@@ -34,6 +34,7 @@ namespace SoftwareAccounting.Domain.Repositories.Implementations
 
 SELECT d.id AS Id,
 	   d.sotr AS Sotr,
+	   s.surname || ' ' || s.name || ' ' || COALESCE(s.patronymic, '') AS SotrFullName,
 	   d.synonym AS Synonym,
 	   d.ip_address AS IpAddress,
 	   d.mac_address AS MacAddress,
@@ -41,6 +42,7 @@ SELECT d.id AS Id,
 	   d.os_name AS OsName,
 	   d.os_architecture AS OsArchitecture
 FROM mir.device d
+LEFT JOIN mir.sotr s ON s.id = d.sotr
 
 ";
 
@@ -50,6 +52,38 @@ FROM mir.device d
             {
                 var res = await dbConnection.QueryAsync<DeviceSettingsInfoModel>(sql);
                 return res.ToList();
+            }
+        }
+
+        public async Task<DeviceSettingsInfoModel> GetDeviceByIdAsync(Guid deviceId)
+        {
+            #region SQL
+
+            var sql = @"
+
+SELECT d.id AS Id,
+	   d.sotr AS Sotr,
+	   s.surname || ' ' || s.name || ' ' || COALESCE(s.patronymic, '') AS SotrFullName,
+	   d.synonym AS Synonym,
+	   d.ip_address AS IpAddress,
+	   d.mac_address AS MacAddress,
+	   d.is_active AS IsActive,
+	   d.os_name AS OsName,
+	   d.os_architecture AS OsArchitecture
+FROM mir.device d
+LEFT JOIN mir.sotr s ON s.id = d.sotr
+WHERE d.id = @deviceId
+LIMIT 1
+
+";
+
+            #endregion
+
+            using (NpgsqlConnection dbConnection = await _dataSource.OpenConnectionAsync())
+            {
+                var param = new { deviceId };
+                var res = await dbConnection.QueryFirstOrDefaultAsync<DeviceSettingsInfoModel>(sql, param);
+                return res;
             }
         }
 
