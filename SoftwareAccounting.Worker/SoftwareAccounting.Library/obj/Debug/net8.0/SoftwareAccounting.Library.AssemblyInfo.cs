@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("SoftwareAccounting.Library")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ef087de7475c3da19e73db8981838ce6ff0e2bcc")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d626ce6fc9a92f2661753152741f6f899930879d")]
 [assembly: System.Reflection.AssemblyProductAttribute("SoftwareAccounting.Library")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SoftwareAccounting.Library")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
