@@ -27,5 +27,8 @@ namespace SoftwareAccounting.Service.Services.ApiClient
 
         [Get("/People/GetAllEmployers")]
         Task<ApiResponse<List<Employer>>> GetAllEmployers();
+
+        [Get("/Settings/GetWebUIUrlForQr")]
+        Task<ApiResponse<string>> GetWebUIUrlForQr(string deviceId);
     }
 }

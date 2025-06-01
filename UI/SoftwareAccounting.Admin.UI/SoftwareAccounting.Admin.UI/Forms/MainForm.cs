@@ -39,8 +39,8 @@ namespace SoftwareAccounting.Admin.UI
                 HeaderText = "Qr-code"
             });
 
-            //dgv_Main.Columns[0].Visible = false;
-            //dgv_Main.Columns[1].Visible = false;
+            dgv_Main.Columns[0].Visible = false;
+            dgv_Main.Columns[1].Visible = false;
         }
 
         private async Task<List<DeviceInfoModel>> GetDevicesList()

@@ -1,6 +1,7 @@
 ﻿using SoftwareAccounting.Common.Models;
 using SoftwareAccounting.Service.Services.ApiClient;
 using SoftwareAccounting.Service.Services.Interfaces;
+using System.Net;
 
 namespace SoftwareAccounting.Service.Services.Implementations
 {
@@ -56,6 +57,17 @@ namespace SoftwareAccounting.Service.Services.Implementations
             }
 
             return false;
+        }
+
+        public async Task<string> GetWebUrlForQrCode(string deviceId)
+        {
+            var response = await _apiClient.GetWebUIUrlForQr(deviceId);
+            if (response.IsSuccessStatusCode)
+            {
+                return response.Content;
+            }
+
+            return "";
         }
     }
 }

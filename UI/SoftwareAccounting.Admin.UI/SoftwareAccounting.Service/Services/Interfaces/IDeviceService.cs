@@ -11,5 +11,7 @@ namespace SoftwareAccounting.Service.Services.Interfaces
         Task<bool> StartDeviceScan();
 
         Task<bool> StartDeviceScan(string ipAddress);
+
+        Task<string> GetWebUrlForQrCode(string deviceId);
     }
 }
