@@ -1,8 +1,12 @@
+using SoftwareAccounting.Admin.UI.Extensions;
+using SoftwareAccounting.Admin.UI.Forms;
 using SoftwareAccounting.Admin.UI.Forms.PeopleForms;
 using SoftwareAccounting.Admin.UI.Forms.PeopleForms.EmployerForms;
 using SoftwareAccounting.Common.Models;
+using SoftwareAccounting.Common.Models.DataGridViewModels;
 using SoftwareAccounting.Service.Services.Implementations;
 using SoftwareAccounting.Service.Services.Interfaces;
+using System.Data.Common;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml.Linq;
@@ -12,6 +16,9 @@ namespace SoftwareAccounting.Admin.UI
     public partial class MainForm : Form
     {
         private readonly IDeviceService _deviceService;
+
+        private int _globalColumnIndex;
+        private int _globalRowIndex;
 
         public MainForm()
         {
@@ -23,8 +30,17 @@ namespace SoftwareAccounting.Admin.UI
             var devices = Task.Run(() => GetDevicesList());
             dgv_Main.DataSource = devices.Result;
 
-            dgv_Main.Columns[0].Visible = false;
-            dgv_Main.Columns[1].Visible = false;
+            dgv_Main.AutoGenerateColumns = false;
+
+            dgv_Main.AddButtonColumn(new DgvButtonSettingsModel
+            {
+                ButtonText = "Создание",
+                ColumnName = "btn_CreateQr",
+                HeaderText = "Qr-code"
+            });
+
+            //dgv_Main.Columns[0].Visible = false;
+            //dgv_Main.Columns[1].Visible = false;
         }
 
         private async Task<List<DeviceInfoModel>> GetDevicesList()
@@ -50,10 +66,19 @@ namespace SoftwareAccounting.Admin.UI
         {
             try
             {
-                if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
+                if (e.RowIndex >= 0 && e.ColumnIndex >= 1)
                 {
                     var rowIndex = dgv_Main.SelectedCells[0].RowIndex;
                     var deviceId = dgv_Main.Rows[rowIndex].Cells[0].Value.ToString();
+
+                    var grid = sender as DataGridView;
+                    var clickedColumnName = grid.Columns[e.ColumnIndex].Name;
+
+                    if (clickedColumnName == "btn_CreateQr")
+                        return;
+
+                        _globalColumnIndex = e.ColumnIndex;
+                    _globalRowIndex = e.RowIndex;
 
                     splitContainerMain.Panel2Collapsed = false;
 
@@ -72,6 +97,31 @@ namespace SoftwareAccounting.Admin.UI
                     dgv_Additional.DataSource = res;
                     dgv_Additional.Columns[0].Visible = false;
                 }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void dgv_Main_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex < 0) return;
+
+            var grid = sender as DataGridView;
+            var clickedColumnName = grid.Columns[e.ColumnIndex].Name;
+
+            if (clickedColumnName == "btn_CreateQr")
+            {
+                CreateQrCodeButtonClick(e);
+            }
+        }
+
+        private void CreateQrCodeButtonClick(DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                new QRCodeGenerationForm(dgv_Main.Rows[e.RowIndex].Cells[0].Value.ToString()).ShowDialog();
             }
             catch (Exception ex)
             {

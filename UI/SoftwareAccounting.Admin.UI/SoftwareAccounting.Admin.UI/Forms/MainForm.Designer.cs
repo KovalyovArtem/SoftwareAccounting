@@ -99,14 +99,14 @@ namespace SoftwareAccounting.Admin.UI
             // ts_item_Users
             // 
             ts_item_Users.Name = "ts_item_Users";
-            ts_item_Users.Size = new Size(180, 22);
+            ts_item_Users.Size = new Size(152, 22);
             ts_item_Users.Text = "Пользователи";
             ts_item_Users.Click += ts_item_Users_Click;
             // 
             // ts_item_Employers
             // 
             ts_item_Employers.Name = "ts_item_Employers";
-            ts_item_Employers.Size = new Size(180, 22);
+            ts_item_Employers.Size = new Size(152, 22);
             ts_item_Employers.Text = "Сотрудники";
             ts_item_Employers.Click += ts_item_Employers_Click;
             // 
@@ -139,6 +139,7 @@ namespace SoftwareAccounting.Admin.UI
             dgv_Main.Size = new Size(643, 640);
             dgv_Main.TabIndex = 0;
             dgv_Main.CellClick += dgv_Main_CellClick;
+            dgv_Main.CellContentClick += dgv_Main_CellContentClick;
             // 
             // dgv_Additional
             // 
