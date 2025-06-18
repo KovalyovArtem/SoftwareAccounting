@@ -111,6 +111,10 @@
             btn_Generate.UseVisualStyleBackColor = true;
             btn_Generate.Click += btn_Generate_Click;
             // 
+            // printDocument
+            // 
+            printDocument.PrintPage += printDocument_PrintPage;
+            // 
             // printPreviewDialog
             // 
             printPreviewDialog.AutoScrollMargin = new Size(0, 0);

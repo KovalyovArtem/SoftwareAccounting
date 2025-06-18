@@ -20,6 +20,9 @@ namespace SoftwareAccounting.Admin.UI
         private int _globalColumnIndex;
         private int _globalRowIndex;
 
+        private List<DeviceInfoModel> _devices;
+        private List<SoftwareInfoModel> _softwares;
+
         public MainForm()
         {
             InitializeComponent();
@@ -28,9 +31,14 @@ namespace SoftwareAccounting.Admin.UI
             _deviceService = Program.deviceService;
 
             var devices = Task.Run(() => GetDevicesList());
-            dgv_Main.DataSource = devices.Result;
+            _devices = devices.Result;
 
-            dgv_Main.AutoGenerateColumns = false;
+            RefreshDataGridViewMain(_devices);
+        }
+
+        private void RefreshDataGridViewMain<T>(List<T> data)
+        {
+            dgv_Main.UploadData(data, 2);
 
             dgv_Main.AddButtonColumn(new DgvButtonSettingsModel
             {
@@ -38,9 +46,6 @@ namespace SoftwareAccounting.Admin.UI
                 ColumnName = "btn_CreateQr",
                 HeaderText = "Qr-code"
             });
-
-            dgv_Main.Columns[0].Visible = false;
-            dgv_Main.Columns[1].Visible = false;
         }
 
         private async Task<List<DeviceInfoModel>> GetDevicesList()
@@ -77,7 +82,7 @@ namespace SoftwareAccounting.Admin.UI
                     if (clickedColumnName == "btn_CreateQr")
                         return;
 
-                        _globalColumnIndex = e.ColumnIndex;
+                    _globalColumnIndex = e.ColumnIndex;
                     _globalRowIndex = e.RowIndex;
 
                     splitContainerMain.Panel2Collapsed = false;
@@ -95,6 +100,7 @@ namespace SoftwareAccounting.Admin.UI
                         return;
                     }
                     dgv_Additional.DataSource = res;
+                    _softwares = res;
                     dgv_Additional.Columns[0].Visible = false;
                 }
             }
@@ -154,7 +160,7 @@ namespace SoftwareAccounting.Admin.UI
                 if (dgv_Main.SelectedCells.Count > 0 || dgv_Main.SelectedRows.Count > 0)
                 {
                     var rowIndex = dgv_Main.SelectedCells[0].RowIndex;
-                    if (Convert.ToBoolean(dgv_Main.Rows[rowIndex].Cells[5].Value) == false)
+                    if (Convert.ToBoolean(dgv_Main.Rows[rowIndex].Cells[6].Value) == false)
                     {
                         MessageBox.Show($"Данный ПК не в сети!");
                         return;
@@ -188,6 +194,50 @@ namespace SoftwareAccounting.Admin.UI
         private void ts_item_Employers_Click(object sender, EventArgs e)
         {
             new EmployerForm().ShowDialog();
+        }
+
+        private void btn_RefreshDevices_Click(object sender, EventArgs e)
+        {
+            var devices = Task.Run(() => GetDevicesList());
+            _devices = devices.Result;
+
+            RefreshDataGridViewMain(_devices);
+        }
+
+        private void tbx_SearchDevice_TextChanged(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(tbx_SearchDevice.Text))
+                RefreshDataGridViewMain(_devices);
+
+            var filteredDevices = _devices.Where(x =>
+                                                    (x.OsArchitecture?.ToLower().Contains(tbx_SearchDevice.Text) ?? false) ||
+                                                    (x.OsName?.ToLower().Contains(tbx_SearchDevice.Text) ?? false) ||
+                                                    (x.IpAddress?.ToLower().Contains(tbx_SearchDevice.Text) ?? false) ||
+                                                    (x.MacAddress?.ToLower().Contains(tbx_SearchDevice.Text) ?? false) ||
+                                                    (x.Synonym?.ToLower().Contains(tbx_SearchDevice.Text) ?? false) ||
+                                                    (x.SotrFullName?.ToLower().Contains(tbx_SearchDevice.Text) ?? false)
+                                                ).ToList();
+
+            RefreshDataGridViewMain(filteredDevices);
+        }
+
+        private void tbx_SearchSoftware_TextChanged(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(tbx_SearchSoftware.Text))
+                dgv_Additional.DataSource = _softwares;
+
+            var filteredSoftware = _softwares.Where(x =>
+                                                    (x.ProgrammName?.ToLower().Contains(tbx_SearchSoftware.Text) ?? false) ||
+                                                    (x.ProgrammVersion?.ToLower().Contains(tbx_SearchSoftware.Text) ?? false) ||
+                                                    (x.ProgrammDeveloper?.ToLower().Contains(tbx_SearchSoftware.Text) ?? false) ||
+                                                    (x.ProgrammLicense?.ToLower().Contains(tbx_SearchSoftware.Text) ?? false) ||
+                                                    (x.ProgrammInstalledDate?.ToLower().Contains(tbx_SearchSoftware.Text) ?? false) ||
+                                                    (x.ProgrammSize?.ToLower().Contains(tbx_SearchSoftware.Text) ?? false) ||
+                                                    (x.ProgrammInstallLocation?.ToLower().Contains(tbx_SearchSoftware.Text) ?? false) ||
+                                                    (x.ProgrammPublisher?.ToLower().Contains(tbx_SearchSoftware.Text) ?? false)
+                                                ).ToList();
+
+            dgv_Additional.DataSource = filteredSoftware;
         }
     }
 }

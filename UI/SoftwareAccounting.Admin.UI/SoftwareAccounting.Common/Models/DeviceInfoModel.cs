@@ -7,6 +7,9 @@ namespace SoftwareAccounting.Common.Models
         public Guid Id { get; set; }
         public Guid? Sotr { get; set; }
 
+        [DisplayName("ФИО фотрудника")]
+        public string? SotrFullName { get; set; }
+
         [DisplayName("Синоним устройства")]
         public string? Synonym { get; set; }
 

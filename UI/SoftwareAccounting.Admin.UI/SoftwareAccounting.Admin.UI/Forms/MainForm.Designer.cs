@@ -42,6 +42,15 @@ namespace SoftwareAccounting.Admin.UI
             dgv_Main = new DataGridView();
             dgv_Additional = new DataGridView();
             panel1 = new Panel();
+            toolStrip1 = new ToolStrip();
+            btn_RefreshDevices = new ToolStripButton();
+            toolStripSeparator1 = new ToolStripSeparator();
+            toolStripLabel1 = new ToolStripLabel();
+            tbx_SearchDevice = new ToolStripTextBox();
+            toolStripSeparator2 = new ToolStripSeparator();
+            toolStripLabel2 = new ToolStripLabel();
+            tbx_SearchSoftware = new ToolStripTextBox();
+            toolStripSeparator3 = new ToolStripSeparator();
             ms_Main.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)splitContainerMain).BeginInit();
             splitContainerMain.Panel1.SuspendLayout();
@@ -50,6 +59,7 @@ namespace SoftwareAccounting.Admin.UI
             ((System.ComponentModel.ISupportInitialize)dgv_Main).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dgv_Additional).BeginInit();
             panel1.SuspendLayout();
+            toolStrip1.SuspendLayout();
             SuspendLayout();
             // 
             // ms_Main
@@ -123,7 +133,7 @@ namespace SoftwareAccounting.Admin.UI
             // splitContainerMain.Panel2
             // 
             splitContainerMain.Panel2.Controls.Add(dgv_Additional);
-            splitContainerMain.Size = new Size(1217, 640);
+            splitContainerMain.Size = new Size(1217, 615);
             splitContainerMain.SplitterDistance = 643;
             splitContainerMain.TabIndex = 1;
             // 
@@ -136,7 +146,7 @@ namespace SoftwareAccounting.Admin.UI
             dgv_Main.Location = new Point(0, 0);
             dgv_Main.Name = "dgv_Main";
             dgv_Main.ReadOnly = true;
-            dgv_Main.Size = new Size(643, 640);
+            dgv_Main.Size = new Size(643, 615);
             dgv_Main.TabIndex = 0;
             dgv_Main.CellClick += dgv_Main_CellClick;
             dgv_Main.CellContentClick += dgv_Main_CellContentClick;
@@ -150,17 +160,78 @@ namespace SoftwareAccounting.Admin.UI
             dgv_Additional.Location = new Point(0, 0);
             dgv_Additional.Name = "dgv_Additional";
             dgv_Additional.ReadOnly = true;
-            dgv_Additional.Size = new Size(570, 640);
+            dgv_Additional.Size = new Size(570, 615);
             dgv_Additional.TabIndex = 0;
             // 
             // panel1
             // 
             panel1.Controls.Add(splitContainerMain);
             panel1.Dock = DockStyle.Fill;
-            panel1.Location = new Point(0, 24);
+            panel1.Location = new Point(0, 49);
             panel1.Name = "panel1";
-            panel1.Size = new Size(1217, 640);
+            panel1.Size = new Size(1217, 615);
             panel1.TabIndex = 2;
+            // 
+            // toolStrip1
+            // 
+            toolStrip1.Items.AddRange(new ToolStripItem[] { btn_RefreshDevices, toolStripSeparator1, toolStripLabel1, tbx_SearchDevice, toolStripSeparator2, tbx_SearchSoftware, toolStripLabel2, toolStripSeparator3 });
+            toolStrip1.Location = new Point(0, 24);
+            toolStrip1.Name = "toolStrip1";
+            toolStrip1.Size = new Size(1217, 25);
+            toolStrip1.TabIndex = 3;
+            toolStrip1.Text = "toolStrip1";
+            // 
+            // btn_RefreshDevices
+            // 
+            btn_RefreshDevices.DisplayStyle = ToolStripItemDisplayStyle.Text;
+            btn_RefreshDevices.Image = (Image)resources.GetObject("btn_RefreshDevices.Image");
+            btn_RefreshDevices.ImageTransparentColor = Color.Magenta;
+            btn_RefreshDevices.Name = "btn_RefreshDevices";
+            btn_RefreshDevices.Size = new Size(173, 22);
+            btn_RefreshDevices.Text = "Обновить данные устройства";
+            btn_RefreshDevices.Click += btn_RefreshDevices_Click;
+            // 
+            // toolStripSeparator1
+            // 
+            toolStripSeparator1.Name = "toolStripSeparator1";
+            toolStripSeparator1.Size = new Size(6, 25);
+            // 
+            // toolStripLabel1
+            // 
+            toolStripLabel1.Name = "toolStripLabel1";
+            toolStripLabel1.Size = new Size(126, 22);
+            toolStripLabel1.Text = "Посик по устройстам";
+            // 
+            // tbx_SearchDevice
+            // 
+            tbx_SearchDevice.Name = "tbx_SearchDevice";
+            tbx_SearchDevice.Size = new Size(100, 25);
+            tbx_SearchDevice.TextChanged += tbx_SearchDevice_TextChanged;
+            // 
+            // toolStripSeparator2
+            // 
+            toolStripSeparator2.Name = "toolStripSeparator2";
+            toolStripSeparator2.Size = new Size(6, 25);
+            // 
+            // toolStripLabel2
+            // 
+            toolStripLabel2.Alignment = ToolStripItemAlignment.Right;
+            toolStripLabel2.Name = "toolStripLabel2";
+            toolStripLabel2.Size = new Size(80, 22);
+            toolStripLabel2.Text = "Поиск по ПО";
+            // 
+            // tbx_SearchSoftware
+            // 
+            tbx_SearchSoftware.Alignment = ToolStripItemAlignment.Right;
+            tbx_SearchSoftware.Name = "tbx_SearchSoftware";
+            tbx_SearchSoftware.Size = new Size(100, 25);
+            tbx_SearchSoftware.TextChanged += tbx_SearchSoftware_TextChanged;
+            // 
+            // toolStripSeparator3
+            // 
+            toolStripSeparator3.Alignment = ToolStripItemAlignment.Right;
+            toolStripSeparator3.Name = "toolStripSeparator3";
+            toolStripSeparator3.Size = new Size(6, 25);
             // 
             // MainForm
             // 
@@ -168,6 +239,7 @@ namespace SoftwareAccounting.Admin.UI
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1217, 664);
             Controls.Add(panel1);
+            Controls.Add(toolStrip1);
             Controls.Add(ms_Main);
             Icon = (Icon)resources.GetObject("$this.Icon");
             MainMenuStrip = ms_Main;
@@ -184,6 +256,8 @@ namespace SoftwareAccounting.Admin.UI
             ((System.ComponentModel.ISupportInitialize)dgv_Main).EndInit();
             ((System.ComponentModel.ISupportInitialize)dgv_Additional).EndInit();
             panel1.ResumeLayout(false);
+            toolStrip1.ResumeLayout(false);
+            toolStrip1.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -202,5 +276,14 @@ namespace SoftwareAccounting.Admin.UI
         private ToolStripMenuItem администрированиеToolStripMenuItem;
         private ToolStripMenuItem ts_item_Users;
         private ToolStripMenuItem ts_item_Employers;
+        private ToolStrip toolStrip1;
+        private ToolStripButton btn_RefreshDevices;
+        private ToolStripSeparator toolStripSeparator1;
+        private ToolStripLabel toolStripLabel1;
+        private ToolStripTextBox tbx_SearchDevice;
+        private ToolStripSeparator toolStripSeparator2;
+        private ToolStripLabel toolStripLabel2;
+        private ToolStripTextBox tbx_SearchSoftware;
+        private ToolStripSeparator toolStripSeparator3;
     }
 }

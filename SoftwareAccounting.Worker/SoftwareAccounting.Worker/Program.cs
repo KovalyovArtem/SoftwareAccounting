@@ -41,11 +41,11 @@ if (OperatingSystem.IsWindows())
 }
 else if (OperatingSystem.IsLinux())
 {
-
+    builder.Services.AddSingleton<IDeviceScan, LinuxDeviceScan>();
 }
 else if (OperatingSystem.IsIOS() || OperatingSystem.IsMacOS())
 {
-
+    builder.Services.AddSingleton<IDeviceScan, MacOsDeviceScan>();
 }
 else
 {

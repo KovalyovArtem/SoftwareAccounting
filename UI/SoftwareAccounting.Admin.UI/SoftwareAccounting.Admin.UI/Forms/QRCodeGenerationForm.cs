@@ -90,9 +90,14 @@ namespace SoftwareAccounting.Admin.UI.Forms
             if (printDialog.ShowDialog() == DialogResult.OK)
             {
                 printDocument.DefaultPageSettings.PaperSize =
-                    new PaperSize("A7", 298, 420);
+                    new PaperSize("A9", 512, 512);
                 printDocument.Print();
             }
+        }
+
+        private void printDocument_PrintPage(object sender, PrintPageEventArgs e)
+        {
+            e.Graphics.DrawImage(pbx_QrCode.Image, e.PageBounds);
         }
     }
 }
